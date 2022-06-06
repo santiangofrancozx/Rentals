@@ -1,0 +1,19 @@
+# ninja log v5
+0	1546	1654126636559352438	CMakeFiles/ProyectoX.dir/Main/main.cpp.o	e4e019ffb9135fad
+0	1550	1654126636560686148	CMakeFiles/ProyectoX.dir/Users/Provider.cpp.o	7ac462067750757b
+0	1552	1654126636562054494	CMakeFiles/ProyectoX.dir/Users/Admin.cpp.o	2520a44ce93095e1
+1549	2274	1654126637295841339	CMakeFiles/ProyectoX.dir/Users/User.cpp.o	38d7d1e1bb07832d
+2274	2660	1654126637683858675	ProyectoX	5ecf7e67918fc7b7
+7	2508	1654126800892402963	CMakeFiles/ProyectoX.dir/Users/Provider.cpp.o	7ac462067750757b
+4	2595	1654126800980979223	CMakeFiles/ProyectoX.dir/Users/Admin.cpp.o	2520a44ce93095e1
+2509	4041	1654126802427864406	CMakeFiles/ProyectoX.dir/Users/User.cpp.o	38d7d1e1bb07832d
+7	3483	1654126861363364224	CMakeFiles/ProyectoX.dir/Main/main.cpp.o	e4e019ffb9135fad
+3484	3593	1654126861476122618	ProyectoX	5ecf7e67918fc7b7
+5	2011	1654126992847176710	CMakeFiles/ProyectoX.dir/Main/main.cpp.o	e4e019ffb9135fad
+2012	2109	1654126992949845452	ProyectoX	5ecf7e67918fc7b7
+4	1778	1654128512557072046	CMakeFiles/ProyectoX.dir/Users/Provider.cpp.o	7ac462067750757b
+4	1795	1654128512570493017	CMakeFiles/ProyectoX.dir/Users/User.cpp.o	38d7d1e1bb07832d
+4	2096	1654128512876413351	CMakeFiles/ProyectoX.dir/Main/main.cpp.o	e4e019ffb9135fad
+2096	2159	1654128512941521313	ProyectoX	5ecf7e67918fc7b7
+5	4383	1654271297871127135	CMakeFiles/ProyectoX.dir/Main/main.cpp.o	e4e019ffb9135fad
+4383	4771	1654271298262841699	ProyectoX	5ecf7e67918fc7b7
