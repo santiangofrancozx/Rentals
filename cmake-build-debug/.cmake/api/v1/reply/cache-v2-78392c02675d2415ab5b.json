@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/user1/Documents/U/Segundo semestre/POO/ProyectoX/cmake-build-debug"
+			"value" : "/Users/user1/Desktop/ProyectoX/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/user1/Documents/U/Segundo semestre/POO/ProyectoX"
+			"value" : "/Users/user1/Desktop/ProyectoX"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -1087,7 +1087,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/user1/Documents/U/Segundo semestre/POO/ProyectoX/cmake-build-debug"
+			"value" : "/Users/user1/Desktop/ProyectoX/cmake-build-debug"
 		},
 		{
 			"name" : "ProyectoX_IS_TOP_LEVEL",
@@ -1111,7 +1111,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/user1/Documents/U/Segundo semestre/POO/ProyectoX"
+			"value" : "/Users/user1/Desktop/ProyectoX"
 		}
 	],
 	"kind" : "cache",

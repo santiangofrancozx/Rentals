@@ -7,12 +7,12 @@
 #include "User.h"
 using namespace::std;
 
-class Suscribed: public User{
+class Subscribed: public User{
 private:
     long AccountNumber, code;
 public:
-    Suscribed();
-    virtual ~Suscribed();
+    Subscribed();
+    virtual ~Subscribed();
     //stters
     void setAccountNumber();
     void setCode();

@@ -12,4 +12,8 @@ add_executable(ProyectoX
         Users/Provider.cpp
         Classes/Users_Classes/Provider.h
         Users/User.cpp
-        Classes/Users_Classes/User.h)
+        Classes/Users_Classes/User.h
+        Classes/Users_Classes/Subscribed.h
+        Users/Subscribed.cpp
+        )
+

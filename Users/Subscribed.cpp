@@ -4,28 +4,28 @@
 #include <iostream>
 using namespace::std;
 
-#include "Classes/Users_Classes/Suscribed.h"
+#include "Classes/Users_Classes/Subscribed.h"
 
-Suscribed::Suscribed(){
+Subscribed::Subscribed(){
     AccountNumber = code = 0;
 }
 
-Suscribed::~Suscribed(){
+Subscribed::~Subscribed(){
     //DTOR
 }
 
-void Suscribed::setAccountNumber(){
+void Subscribed::setAccountNumber(){
     cout<<"Input your account number: ";
     cin>>AccountNumber;
 }
-void Suscribed::setCode(){
+void Subscribed::setCode(){
     cout<<"Input special code: ";
     cin>>code;
 }
 
-long Suscribed::getAccountNumber(){
+long Subscribed::getAccountNumber(){
     return AccountNumber;
 }
-long Suscribed::getCode(){
+long Subscribed::getCode(){
     return code;
 }
