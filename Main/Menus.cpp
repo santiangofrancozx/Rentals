@@ -199,23 +199,15 @@ void menuAdmin(){
     do {
         cout << "Menu for administrators ;3\n";
         cout << "--------------------------\n";
-        cout << "1. Check the inventory\n";
-        cout << "2. Add items to inventory\n";
-        cout << "3. Erase items from inventory\n";
-        cout << "4. Create new clients\n";
-        cout << "5. Search clients\n";
-        cout << "6. Search provider\n";
-        cout << "7. Erase clients or providers\n";
+        cout << "1. Inventory\n";
+        cout << "2. Clients\n";
+        cout << "3. About\n";
         cout << "0. Exit\n";
         cin >> opc;
         switch(opc){
-        	case 1: showInventory(); break;
-        	case 2: addInventory(); break;
-        	case 3: eraseInventory(); break;
-            case 4: createNewClients(); break;
-            case 5: searchClient(); break;
-            case 6: searchProviderUser(); break;
-            case 7: eraseClients(); break;
+        	case 1: inventoryFuntions(); break;
+        	case 2: clientsFuntions(); break;
+        	/*case 3: about(); break;*/
             case 0: Menu(); break;
             default:
                 cout<<"Wrong option, please try again.\n";
