@@ -1,8 +1,16 @@
 # ninja log v5
-0	117	1654894675939221477	build.ninja	f79b6d5c28478074
+0	117	1654982845463901182	build.ninja	f79b6d5c28478074
 6	2112	1654781308823884850	CMakeFiles/ProyectoX.dir/Users/Provider.cpp.o	6def75c9e85ce68
 7	2114	1654781308824928284	CMakeFiles/ProyectoX.dir/Users/User.cpp.o	3de1ac549f46fd9e
 9	2456	1654891588979672694	CMakeFiles/ProyectoX.dir/Main/main.cpp.o	8f7f0a9e14baef2c
 2456	2541	1654891589066363142	ProyectoX	b839f28c09d46864
 6	2378	1654747427767474055	CMakeFiles/ProyectoX.dir/Users/Admin.cpp.o	27ad85b4fe9f7ed5
 7	4176	1654783327949165626	CMakeFiles/ProyectoX.dir/Users/Subscribed.cpp.o	5f3fc0c81563111a
+3	1590	1654984695687275979	CMakeFiles/ProyectoX.dir/Users/Admin.cpp.o	e25e4870aeb62cef
+6	1593	1654984695683788699	CMakeFiles/ProyectoX.dir/Users/Provider.cpp.o	7381cb02d206d594
+4	1978	1654984696074801779	CMakeFiles/ProyectoX.dir/Main/main.cpp.o	76e1b5f78855cbaa
+1593	2486	1654984696586727905	CMakeFiles/ProyectoX.dir/Users/Subscribed.cpp.o	94693d8edcd94a6d
+1590	2508	1654984696609971644	CMakeFiles/ProyectoX.dir/Users/User.cpp.o	b60bee6be1601a83
+2508	2950	1654984697054647815	ProyectoX	b839f28c09d46864
+3	1533	1654984861386653521	CMakeFiles/ProyectoX.dir/Main/main.cpp.o	76e1b5f78855cbaa
+1534	1648	1654984861507826037	ProyectoX	b839f28c09d46864

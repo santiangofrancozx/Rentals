@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include "Main/userCreator2000.cpp"
+#include "Main/admin_roles.cpp"
 using namespace::std;
 
 //definicion de variables y arreglos globales
@@ -11,15 +12,14 @@ using namespace::std;
 void menuAdmin();
 void createNewClients();
 void login();
-//void clean();
-void inventory();
+void clean();
 void firstRun();
 void Menu();
 
 //Implementacion de metodos
-/*void clean(){
+void clean(){
     system("clear");
-}*/
+}
 void firstRun(){
     Admin objAdmin;
     string verify;
@@ -40,13 +40,12 @@ void firstRun(){
             cin >> verify;
         }while(objAdmin.getPassword() != verify);
     }
-    //clean();
-    cout<< objAdmin.getUserName() <<endl;
-    cout<< objAdmin.getPassword() <<endl;
+    clean();
     Menu();
 }
 
 void login(){
+    clean();
     string username, password;
     int type;
     int opc;
@@ -58,6 +57,7 @@ void login(){
     do {
         cout << "Input you user's type code: \n";
         cout << "1. Admin, 2. Common, 3. Suscribed, 4. Provider\n";
+        cout << "-> ";
         cin >> type;
         //limpiar pantalla
 
@@ -77,14 +77,17 @@ void login(){
                     if (username == adm.getUserName()) {
                         if (password == adm.getPassword()) {
                             menuAdmin();
+                            clean();
                             opc = 0;
                             break;
                         }else {
                             cout << "Incorrect username or password\n";
+                            clean();
                             break;
                         }
                     }else {
                         cout << "Incorrect username or password\n";
+                        clean();
                         break;
                     }
                 }
@@ -96,14 +99,17 @@ void login(){
                     if (username == usr.getUserName()) {
                         if (password == usr.getPassword()) {
                             cout << "hola bb user\n";
+                            clean();
                             opc = 0;
                             break;
                         }else {
                             cout << "Incorrect username or password\n";
+                            clean();
                             break;
                         }
                     }else {
                         cout << "Incorrect username or password\n";
+                        clean();
                         break;
                     }
                 }
@@ -115,14 +121,17 @@ void login(){
                     if (username == ssd.getUserName()) {
                         if (password == ssd.getPassword()) {
                             cout << "a que hora pasas por el pan subscribed(?)\n";
+                            clean();
                             opc = 0;
                             break;
                         }else {
                             cout << "Incorrect username or password\n";
+                            clean();
                             break;
                         }
                     }else {
                         cout << "Incorrect username or password\n";
+                        clean();
                         break;
                     }
                 }
@@ -133,24 +142,29 @@ void login(){
                     prv = vecProvider[x];
                     if (username == prv.getUserName()) {
                         if (password == prv.getPassword()) {
-                            cout << "pa donde tan dindo\n";
+                            cout << "pa donde tan dindo provider\n";
+                            clean();
                             opc = 0;
                             break;
                         }else {
                             cout << "Incorrect username or password\n";
+                            clean();
                             break;
                         }
                     }else {
                         cout << "Incorrect username or password\n";
+                        clean();
                         break;
                     }
                 }
                 break;
             default:
                 cout << "Wrong option, please try again.\n";
+                clean();
                 break;
         }
     }while(opc != 0);
+    clean();
 }
 
 
@@ -167,45 +181,17 @@ void Menu(){
         cout << "-> ";
         cin >> opc;
         switch (opc) {
-            case 1:
-                login();
-                break;
-            case 2:
-                //web.cppp
-                break;
-            case 3:
-                //about.cpp
-                break;
-            case 0:
-                break;
+            case 1: login(); break;
+            case 2: /*web();*/ break;
+            case 3: /*about();*/ break;
+            case 0: break;
             default:
                 cout<<"Wrong option, please try again.\n";
+                clean();
                 break;
         }
     }while(opc != 0);
 
-}
-
-void createNewClients(){
-    int opc;
-    do {
-        cout << "Seleccione el tipo de usuario que desea crear: \n";
-        cout << "1. Usuario normal\n";
-        cout << "2. Usuario proveedor\n";
-        cout << "3. Usuario Subcribed\n";
-        cout << "4. Usuario Admin\n";
-        cout << "0. exit\n";
-        cin>> opc;
-
-        switch (opc) {
-            case 1: CreateUser(); break;
-            case 2: CreateProvider(); break;
-            case 3: CreateSubscribed(); break;
-            case 4: CreateAdmin(); break;
-            case 0: menuAdmin(); break;
-            default: cout<<"Incorrect option, please try again.\n";
-        }
-    }while(opc != 0);
 }
 
 void menuAdmin(){
@@ -215,14 +201,16 @@ void menuAdmin(){
         cout << "--------------------------\n";
         cout << "1. Check the inventory\n";
         cout << "2. Add items to inventory\n";
-        cout << "3. Create new clients\n";
-        cout << "4. Search clients\n";
-        cout << "5. Search suplier\n";
+        cout << "3. Clients options\n";
+        cout << "4. Generate bills\n";
         cout << "0. Exit\n";
+        cout << "-> ";
         cin >> opc;
         switch(opc){
-            case 3: createNewClients(); break;
-            case 0: Menu(); break;
+            case 1: /*inventoryMenu();*/ break;
+            case 2: /*addItemsInventory();*/ break;
+            case 3: clientsFuntions(); break;
+            case 0: break;
             default:
                 cout<<"Wrong option, please try again.\n";
                 break;
