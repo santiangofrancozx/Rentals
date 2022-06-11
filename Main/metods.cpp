@@ -20,15 +20,15 @@ Subscribed objSuscribed;
 
 //BUSQUEDA/CONSULTA DE USUARIOS
 void searchCommonUser(){
-    string search;
+    long search;
     bool exist = false;
     User t1;
 
-    cout << "Input user's name: ";
+    cout << "Input user's ID: ";
     cin >> search;
     for (int i = 0; i < vecUser.size(); i++){
         t1 = vecUser[i];
-        if (t1.getUserName() == search){
+        if (t1.getID() == search){
             exist = true;
             cout << "Information about user: \n";
             cout << t1.getLastname() << ", " << t1.getName() << endl;
@@ -43,15 +43,15 @@ void searchCommonUser(){
 }
 
 void searchProviderUser(){
-    string search;
+    long search;
     bool exist = false;
     Provider t2;
 
-    cout << "Input provider's username: ";
+    cout << "Input provider's ID: ";
     cin >> search;
     for (int i = 0; i < vecProvider.size(); i++){
         t2 = vecProvider[i];
-        if (t2.getUserName() == search){
+        if (t2.getID() == search){
             exist = true;
             cout << "Information about user: \n";
             cout << t2.getLastname() << ", " << t2.getName() << endl;
@@ -60,22 +60,22 @@ void searchProviderUser(){
             cout << t2.getMail() << endl;
             cout << t2.getCompany() << ", " << t2.getNIT() << endl;
         } else if (!exist){
-            cout << "The provider's name has not been found.\n";
+            cout << "The provider's ID has not been found.\n";
             cout << "Make sure that the username is correct.\n";
         }
     }
 }
 
 void searchSubscribedUser(){
-    string search;
+    long search;
     bool exist = false;
     Subscribed t3;
 
-    cout << "Input suscribed's username: ";
+    cout << "Input suscribed's ID: ";
     cin >> search;
     for (int i = 0; i < vecSubscribed.size(); i++){
         t3 = vecSubscribed[i];
-        if (t3.getUserName() == search){
+        if (t3.getID() == search){
             exist = true;
             cout << "Information about user: \n";
             cout << t3.getLastname() << ", " << t3.getName() << endl;
@@ -84,8 +84,8 @@ void searchSubscribedUser(){
             cout << t3.getMail() << endl;
             cout << t3.getAccountNumber() << ", " << t3.getCode() << endl;
         } else if (!exist){
-            cout << "The suscribed's name has not been found.\n";
-            cout << "Make sure that the username is correct.\n";
+            cout << "The subscribed ID has not been found.\n";
+            cout << "Make sure that the ID is correct.\n";
         }
     }
 }
@@ -114,28 +114,28 @@ void searchAdmin(){
 //BORRAR USUARIOS
 void eraseCommonUser(){
     //vector<>;
-    string search;
+    long search;
     bool exist;
     User o1;
     int opc;
 
-    cout << "Input user's name: ";
+    cout << "Input user's ID: ";
     cin >> search;
     for (int i = 0; i < vecUser.size(); i++){
         o1 = vecUser[i];
-        if (o1.getUserName() == search){
+        if (o1.getID() == search){
             exist = true;
             cout << "Are you sure you want to erase this user?\n";
             cout << "1. Yes // 2. No\n";
-            cout << "Erase " << search << ": ";
+            cout << "Erase " << o1.getUserName() << ": ";
             cin >> opc;
 
             switch (opc) {
                 case 1: ; break; //no se como hacer esta funcion para borrar :P
             }
         } else if (!exist){
-            cout << "The user's name has not been found.\n";
-            cout << "Make sure that the username is correct.\n";
+            cout << "The user ID has not been found.\n";
+            cout << "Make sure that the user ID is correct.\n";
         }
     }
 }
