@@ -8,7 +8,6 @@ using namespace::std;
 
 //implementacion de metodos
 
-
 void createNewClients(){
     int opc;
     do {
@@ -39,7 +38,7 @@ void searchClient(){
         cout << "Select the type of user you want to find: \n";
         cout << "1. Common user\n";
         cout << "2. Provider user\n";
-        cout << "3. Suscribed user\n";
+        cout << "3. Subscribed user\n";
         cout << "4. Admin user\n";
         cout << "0. Go back\n";
         cout << "-> ";
@@ -63,7 +62,7 @@ void eraseClient(){
         cout << "Select the type of user you want to erase:\n";
         cout << "1. Common user\n";
         cout << "2. Provider user\n";
-        cout << "3. Suscribed user\n";
+        cout << "3. Subscribed user\n";
         cout << "0. Go back\n";
         cout << "-> ";
         cin>> opc;
@@ -71,7 +70,7 @@ void eraseClient(){
         switch(opc){
             case 1: eraseCommonUser(); break;
             case 2: eraseProviderUser(); break;
-            case 3: eraseSuscriberUser(); break;
+            case 3: eraseSubscribedUser(); break;
             case 0: break;
             default: cout << "Incorrect option\n";
         }
@@ -99,4 +98,48 @@ void clientsFuntions(){
             default: cout << "Incorrect option\n";
         }
     }while(opc != 0);
+}
+
+//2. agregar item
+void addItem(){
+    int opc;
+    do {
+        cout << "Select the type of item you want to add: \n";
+        cout << "1. Comfort car\n";
+        cout << "2. Sport car\n";
+        cout << "3. Work car\n";
+        cout << "0. Go back\n";
+        cout << "-> ";
+        cin >> opc;
+
+        switch(opc){
+            case 1: addComfort(); break;
+            case 2: addSport(); break;
+            case 3: addWork(); break;
+            case 0: break;
+            default: cout << "Incorrect option\n";
+        }
+    } while(opc != 0);
+}
+
+//MENU EN ADMIN PARA INVENTARIO
+void inventoryFuntions(){
+    int opc;
+    do {
+        cout << "Menu for inventory: \n";
+        cout << "1. Check inventory\n";
+        cout << "2. Add item to inventory\n";
+        cout << "3. Erase item form inventory\n";
+        cout << "0. Exit\n";
+        cout << "-> ";
+        cin >> opc;
+
+        switch (opc){
+            case 1: checkInventory(); break;
+            case 2: addItem(); break;
+            //case 3: eraseItem(); break;
+            case 0: break;
+            default: cout << "Incorrect option\n";
+        }
+    } while(opc != 0);
 }
