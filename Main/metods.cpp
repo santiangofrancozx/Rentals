@@ -1,7 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 
+#include "Classes/Autos_Clasees/Comfort.h"
+#include "Classes/Autos_Clasees/Sport.h"
+#include "Classes/Autos_Clasees/Work.h"
 #include "Classes/Users_Classes/Subscribed.h"
 #include "Classes/Users_Classes/Provider.h"
 
@@ -12,6 +16,13 @@ Admin objAdmin;
 User objUser;
 Provider objProvider;
 Subscribed objSuscribed;
+
+//vectores globales
+vector <Comfort> vecComfort;
+vector <Sport> vecSport;
+vector <Work> vecWork;
+
+string inventory[30][3];
 
 //BUSQUEDA/CONSULTA DE USUARIOS
 void searchCommonUser(){
@@ -33,6 +44,7 @@ void searchCommonUser(){
         } else if (!exist){
             cout << "The ID has not been found.\n";
             cout << "Make sure that the ID is correct.\n";
+            break;
         }
     }
 }
@@ -189,4 +201,112 @@ void eraseSubscribedUser(){
             cout << "Make sure that the ID is correct.\n";
         }
     }
+}
+
+//AGREGAR ITEMS
+void addComfort(){
+    Comfort obj1;
+    //string state;
+
+    obj1.setPrice();
+    obj1.setLicensePlate();
+    obj1.setKMxG();
+    obj1.setMileage();
+    obj1.setBrand();
+    obj1.setNumberSeats();
+    obj1.setNumberAirBag();
+    obj1.setState();
+    vecComfort.push_back(obj1); //toda la informacion la almacena en un vector
+
+    //luego, almacenara una matriz con 3 campos basicos que seran el inventario a mostrar
+    for (int i = 0; i < 30; i++){
+        for (int j = 0; j < 3; j++){
+            if (j < 1) {
+                inventory[i][j] = obj1.getBrand(); //por ejemplo
+            } else if (j < 2) {
+                inventory[i][j] = obj1.getLicensePlate();
+            } else if (j < 3) {
+                inventory[i][j] = obj1.getState();
+                /*if (obj1.getState() == true) {
+                    state = "Available";
+                    inventory[i][j] = state;
+                } else if (obj1.getState() == false) {
+                    state = "Not available";
+                    inventory[i][j] = state;*/
+                    //PONER EN TODOS LOS OBJETOS SI FUNCIONA
+                }
+            }
+        }
+    }
+}
+
+void addSport(){
+    Sport obj2;
+
+    obj2.setPrice();
+    obj2.setLicensePlate();
+    obj2.setKMxG();
+    obj2.setMileage();
+    obj2.setBrand();
+    obj2.setState();
+    vecSport.push_back(obj2);
+
+    for (int i = 0; i < 30; i++){
+        for (int j = 0; j < 3; j++){
+            if (j < 1) {
+                inventory[i][j] = obj2.getBrand(); //por ejemplo
+            } else if (j < 2) {
+                inventory[i][j] = obj2.getLicensePlate();
+            } else if (j < 3) {
+                inventory[i][j] = obj2.getState();
+            }
+        }
+    }
+}
+
+void addWork(){
+    Work obj3;
+
+    obj3.setPrice();
+    obj3.setLicensePlate();
+    obj3.setKMxG();
+    obj3.setMileage();
+    obj3.setBrand();
+    obj3.setCantTons();
+    obj3.setTrailer();
+    obj3.setState();
+    vecWork.push_back(obj3);
+
+    for (int i = 0; i < 30; i++){
+        for (int j = 0; j < 3; j++){
+            if (j < 1) {
+                inventory[i][j] = obj3.getBrand(); //por ejemplo
+            } else if (j < 2) {
+                inventory[i][j] = obj3.getLicensePlate();
+            } else if (j < 3) {
+                inventory[i][j] = obj3.getState();
+            }
+        }
+    }
+}
+
+//VER INVENTARIO EN ARCHIVO CSV
+void checkInventory(){
+    ofstream file ("inventory.csv", ofstream::app);
+
+    if (!file){
+        cout << "Error. Couldn't create 'inventory.csv'\n";
+    } else {
+        for (int i = 0; i < 30; i++) {
+            for (int j =0; j < 30; i++) {
+                if (j != 0) {
+                    file << " | ";
+                }
+                file << inventory[i][j];
+            }
+            file << "\n";
+        }
+        file.close();
+    }
+    file.close();
 }
