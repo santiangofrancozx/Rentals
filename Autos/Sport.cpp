@@ -36,7 +36,7 @@ void Sport::setMileage(){
     cout<<"Input mileage: ";
     cin>>Mileage;
 }
-
+//amen
 void Sport::setBrand(){
     fflush(stdin);
     cout<<"Input brand: ";
