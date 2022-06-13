@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S "/Users/user1/Desktop/ProyectoX vF" -B "/Users/user1/Desktop/ProyectoX vF/cmake-build-debug"
+"C:\Program Files\JetBrains\CLion 2022.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\0612v\Documents\Rentals -B C:\Users\0612v\Documents\Rentals\cmake-build-debug
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/user1/Desktop/ProyectoX vF/cmake-build-debug
+-- Build files have been written to: C:/Users/0612v/Documents/Rentals/cmake-build-debug

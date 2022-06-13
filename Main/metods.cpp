@@ -234,7 +234,7 @@ void addComfort(){
                     state = "Not available";
                     inventory[i][j] = state;*/
                     //PONER EN TODOS LOS OBJETOS SI FUNCIONA
-                }
+                //}
             }
         }
     }

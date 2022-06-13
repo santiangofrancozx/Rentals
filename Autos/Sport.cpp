@@ -38,7 +38,7 @@ void Sport::setMileage(){
 }
 
 void Sport::setBrand(){
-    ffush(stdin);
+    fflush(stdin);
     cout<<"Input brand: ";
     getline(cin, brand);
 }

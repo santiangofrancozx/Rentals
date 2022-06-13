@@ -2,7 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "ProyectoX"
+			"path" : "ProyectoX.exe"
+		},
+		{
+			"path" : "ProyectoX.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -42,7 +45,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2"
+					"fragment" : "-g"
 				},
 				{
 					"fragment" : "-std=gnu++14"
@@ -52,7 +55,7 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/Users/user1/Desktop/ProyectoX vF/."
+					"path" : "C:/Users/0612v/Documents/Rentals/."
 				}
 			],
 			"language" : "CXX",
@@ -70,7 +73,10 @@
 				2,
 				3,
 				5,
-				8
+				8,
+				10,
+				12,
+				14
 			]
 		}
 	],
@@ -86,12 +92,16 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
 	"name" : "ProyectoX",
-	"nameOnDisk" : "ProyectoX",
+	"nameOnDisk" : "ProyectoX.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -107,7 +117,10 @@
 				2,
 				3,
 				5,
-				8
+				8,
+				10,
+				12,
+				14
 			]
 		},
 		{
@@ -117,7 +130,10 @@
 				1,
 				4,
 				6,
-				7
+				7,
+				9,
+				11,
+				13
 			]
 		}
 	],
@@ -171,6 +187,39 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "Users/Subscribed.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Classes/Autos_Clasees/Comfort.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Autos/Comfort.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Classes/Autos_Clasees/Sport.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Autos/Sport.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Classes/Autos_Clasees/Work.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Autos/Work.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
