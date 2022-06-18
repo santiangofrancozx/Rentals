@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S "/Users/user1/Desktop/ProyectoX vF" -B "/Users/user1/Desktop/ProyectoX vF/cmake-build-debug"
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/user1/Desktop/Rentals -B /Users/user1/Desktop/Rentals/cmake-build-debug
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/user1/Desktop/ProyectoX vF/cmake-build-debug
+-- Build files have been written to: /Users/user1/Desktop/Rentals/cmake-build-debug

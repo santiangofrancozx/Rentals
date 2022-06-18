@@ -7,10 +7,10 @@
 #include <iostream>
 using namespace::std;
 
-class Sport {
+class Sport{
 private:
-    long price, license_plate, KMxG, Mileage;
-    string brand;
+    long price, KMxG, Mileage;
+    string brand, license_plate;
     bool state;
 public:
     Sport();
@@ -24,11 +24,11 @@ public:
     void setState();
 
     long getPrice();
-    long getLicensePlate();
+    string getLicensePlate();
     long getKMxG();
     long getMileage();
     string getBrand();
-    bool getState();
+    string getState();
 };
 
 

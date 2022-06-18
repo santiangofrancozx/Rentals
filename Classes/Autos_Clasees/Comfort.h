@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace::std;
 
-class Comfort {
+class Comfort: public Sport{
 private:
     int numberSeats, numberAirBag;
 public:

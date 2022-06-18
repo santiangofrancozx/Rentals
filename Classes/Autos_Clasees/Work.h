@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace::std;
 
-class Work{
+class Work: public Comfort{
 private:
     int cantTons;
     bool trailer;

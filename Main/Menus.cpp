@@ -10,11 +10,12 @@ using namespace::std;
 
 //Definicion de metodos
 void menuAdmin();
-void createNewClients();
 void login();
 void clean();
 void firstRun();
 void Menu();
+void inventoryMenu();
+void addInventoryItemsMenu();
 
 //Implementacion de metodos
 void clean(){
@@ -171,7 +172,7 @@ void login(){
 void Menu(){
     int opc;
     do {
-        cout << "Welcome to our program, please log in\n";
+        cout << "Welcome to our program, please login\n";
         cout << "Option menu:\n";
         cout << "----------------\n";
         cout << "1. Login\n";
@@ -199,17 +200,16 @@ void menuAdmin(){
     do {
         cout << "Menu for administrators ;3\n";
         cout << "--------------------------\n";
-        cout << "1. Check the inventory\n";
-        cout << "2. Add items to inventory\n";
-        cout << "3. Clients options\n";
-        cout << "4. Generate bills\n";
+        cout << "1. Inventory menu\n";
+        cout << "2. Clients options\n";
+        cout << "3. Rent car\n";
         cout << "0. Exit\n";
         cout << "-> ";
         cin >> opc;
         switch(opc){
-            case 1: /*inventoryMenu();*/ break;
-            case 2: /*addItemsInventory();*/ break;
-            case 3: clientsFuntions(); break;
+            case 1: inventoryMenu(); break;
+            case 2: clientsFuntions(); break;
+            case 3: rentCar(); break;
             case 0: break;
             default:
                 cout<<"Wrong option, please try again.\n";
@@ -218,5 +218,61 @@ void menuAdmin(){
     }while(opc != 0);
 }
 
+void addInventoryItemsMenu(){
+    int opc;
+    Sport SportObj;
+    Comfort ComfortObj;
+    Work WorkObj;
+    do {
+        cout << "Please select what type of item do u add: \n";
+        cout << "1. Comfort car\n";
+        cout << "2. Sport car\n";
+        cout << "3. Work car\n";
+        cout << "0. Go back\n";
+        cout << "-> ";
+        cin >> opc;
+        switch (opc) {
+            case 1:
+                addComfort();
+                break;
+            case 2:
+                addSport();
+                break;
+            case 3:
+                addWork();
+                break;
+            case 0: break;
+
+            default:
+                cout<< "Wrong option, please try again\n";
+                break;
+        }
+    }while(opc != 0);
+
+}
+
+
+void inventoryMenu(){
+    int opc;
+    do {
+        cout << "Inventory Menu\n";
+        cout << "--------------\n\n";
+        cout << "1. Check inventory\n";
+        cout << "2. Add items\n";
+        cout << "3. See rented items\n";
+        cout << "0. Go back\n";
+        cout<< "-> ";
+        cin>> opc;
+
+        switch (opc) {
+            case 1: checkInventory(); break;
+            case 2: addInventoryItemsMenu(); break;
+            case 3: rentedItems(); break;
+            case 0: break;
+            default:
+                cout<< "Wrong option, please try again\n";
+        }
+    }while(opc != 0);
+}
 
 

@@ -6,13 +6,11 @@
 #include "Classes/Users_Classes/User.h"
 using namespace::std;
 
-//definicion de variables globales
+//definicion de vectores globales
 vector <Admin> vecAdmin;
 vector <User> vecUser;
 vector <Provider> vecProvider;
 vector <Subscribed> vecSubscribed;
-
-
 
 //definicion de funciones
 void CreateUser();
@@ -21,7 +19,7 @@ void CreateSubscribed();
 void CreateAdmin();
 
 //implemetacion de funciones
-void CreateUser(){
+void CreateUser() {
     User obj;
     obj.setName();
     obj.setLastname();

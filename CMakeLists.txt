@@ -15,5 +15,12 @@ add_executable(ProyectoX
         Classes/Users_Classes/User.h
         Classes/Users_Classes/Subscribed.h
         Users/Subscribed.cpp
+        Classes/Autos_Clasees/Comfort.h
+        Autos/Comfort.cpp
+        Classes/Autos_Clasees/Sport.h
+        Autos/Sport.cpp
+        Classes/Autos_Clasees/Work.h
+        Autos/Work.cpp
         )
+
 

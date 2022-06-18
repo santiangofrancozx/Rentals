@@ -8,8 +8,8 @@ using namespace::std;
 
 
 Sport::Sport(){
-    price = license_plate = KMxG = Mileage = 0;
-    brand = "-";
+    price = KMxG = Mileage = 0;
+    brand = license_plate = "-";
     state = true;
 }
 
@@ -38,21 +38,20 @@ void Sport::setMileage(){
 }
 
 void Sport::setBrand(){
-    ffush(stdin);
+    fflush(stdin);
     cout<<"Input brand: ";
     getline(cin, brand);
 }
 
 void Sport::setState(){
-    cout<<"Current state: ";
-    cin>>state;
+    state = false;
 }
 
 long Sport::getPrice(){
     return price;
 }
 
-long Sport::getLicensePlate(){
+string Sport::getLicensePlate(){
     return license_plate;
 }
 
@@ -68,6 +67,10 @@ string Sport::getBrand(){
     return brand;
 }
 
-bool Sport::getState(){
-    return state;
+string Sport::getState(){
+    if(state == 1){
+        return "Available";
+    } else{
+        return  "Out of stock";
+    }
 }

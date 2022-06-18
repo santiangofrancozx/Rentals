@@ -1,20 +1,18 @@
 #include <iostream>
 #include <vector>
-#include <string>
-
-#include "Classes/Users_Classes/Subscribed.h"
-#include "Classes/Users_Classes/Provider.h"
+#include "Main/InventoryCreator.cpp"
 
 
 using namespace::std;
 
-//objetos globales
-Admin objAdmin;
-User objUser;
-Provider objProvider;
-Subscribed objSuscribed;
-
 //definicion de metodos
+void searchCommonUser();
+void searchProviderUser();
+void searchSubscribedUser();
+void searchAdmin();
+void eraseCommonUser();
+void eraseProviderUser();
+void eraseSubscribedUser();
 
 //Implementacion de metodos
 
@@ -140,5 +138,62 @@ void eraseCommonUser(){
     }
 }
 
-void eraseProviderUser(){}
-void eraseSuscriberUser(){}
+void eraseProviderUser(){
+    long search;
+    bool exist = false;
+    int opc;
+    Provider t2;
+
+    cout << "Input provider's ID: ";
+    cin >> search;
+    for (int i = 0; i < vecProvider.size(); i++){
+        t2 = vecProvider[i];
+        if (t2.getID() == search){
+            exist = true;
+            cout << "Are you sure you want to erase this user?\n";
+            cout << "1. Yes // 2. No: ";
+            cin >> opc;
+
+            switch (opc){
+                case 1: vecProvider.erase(vecProvider.begin() + i); break;
+                case 2: break; //or erase menu
+                default: cout << "Incorrect option\n";
+            }
+        } else if (!exist){
+            cout << "The ID has not been found.\n";
+            cout << "Make sure that the ID is correct.\n";
+        }
+    }
+}
+
+void eraseSubscribedUser(){
+    long search;
+    bool exist = false;
+    int opc;
+    Subscribed t3;
+
+    cout << "Input subscribed's ID: ";
+    cin >> search;
+    for (int i = 0; i < vecSubscribed.size(); i++){
+        t3 = vecSubscribed[i];
+        if (t3.getID() == search){
+            exist = true;
+            cout << "Are you sure you want to erase this user?\n";
+            cout << "1. Yes // 2. No: ";
+            cin >> opc;
+
+            switch(opc){
+                case 1: vecSubscribed.erase(vecSubscribed.begin() + i); break;
+                case 2: break;
+                default: cout << "Incorrect option\n";
+            }
+        } else if (!exist){
+            cout << "The ID has not been found.\n";
+            cout << "Make sure that the ID is correct.\n";
+        }
+    }
+}
+
+
+
+

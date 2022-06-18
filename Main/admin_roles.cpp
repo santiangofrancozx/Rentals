@@ -71,7 +71,7 @@ void eraseClient(){
         switch(opc){
             case 1: eraseCommonUser(); break;
             case 2: eraseProviderUser(); break;
-            case 3: eraseSuscriberUser(); break;
+            case 3: eraseSubscribedUser(); break;
             case 0: break;
             default: cout << "Incorrect option\n";
         }
