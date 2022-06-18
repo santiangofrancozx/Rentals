@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/user1/Desktop/Rentals -B /Users/user1/Desktop/Rentals/cmake-build-debug
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/user1/Desktop/Rentals/cmake-build-debug
+=======
+"C:\Program Files\JetBrains\CLion 2022.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\0612v\Documents\Rentals -B C:\Users\0612v\Documents\Rentals\cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/0612v/Documents/Rentals/cmake-build-debug
+>>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393
