@@ -2,10 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "ProyectoX.exe"
-		},
-		{
-			"path" : "ProyectoX.pdb"
+			"path" : "ProyectoX"
 		}
 	],
 	"backtrace" : 1,
@@ -45,7 +42,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2"
 				},
 				{
 					"fragment" : "-std=gnu++14"
@@ -55,11 +52,7 @@
 			[
 				{
 					"backtrace" : 2,
-<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/target-ProyectoX-Debug-a6b8868440a598979847.json
 					"path" : "/Users/user1/Desktop/Rentals/."
-=======
-					"path" : "C:/Users/0612v/Documents/Rentals/."
->>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393:cmake-build-debug/.cmake/api/v1/reply/target-ProyectoX-Debug-fd871db666ae994bc7b4.json
 				}
 			],
 			"language" : "CXX",
@@ -96,16 +89,12 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
-				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
 	"name" : "ProyectoX",
-	"nameOnDisk" : "ProyectoX.exe",
+	"nameOnDisk" : "ProyectoX",
 	"paths" : 
 	{
 		"build" : ".",

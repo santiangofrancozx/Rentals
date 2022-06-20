@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
-<<<<<<< HEAD
+
 #include "Main/InventoryCreator.cpp"
-=======
+
 #include <string>
 #include <fstream>
 
@@ -11,11 +11,11 @@
 #include "Classes/Autos_Clasees/Work.h"
 #include "Classes/Users_Classes/Subscribed.h"
 #include "Classes/Users_Classes/Provider.h"
->>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393
+
 
 using namespace::std;
 
-<<<<<<< HEAD
+
 //definicion de metodos
 void searchCommonUser();
 void searchProviderUser();
@@ -24,20 +24,8 @@ void searchAdmin();
 void eraseCommonUser();
 void eraseProviderUser();
 void eraseSubscribedUser();
-=======
-//objetos globales
-Admin objAdmin;
-User objUser;
-Provider objProvider;
-Subscribed objSuscribed;
 
-//vectores globales
-vector <Comfort> vecComfort;
-vector <Sport> vecSport;
-vector <Work> vecWork;
->>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393
 
-string inventory[30][3];
 
 //BUSQUEDA/CONSULTA DE USUARIOS
 void searchCommonUser(){
@@ -218,170 +206,3 @@ void eraseSubscribedUser(){
     }
 }
 
-//AGREGAR ITEMS
-void addComfort(){
-    Comfort obj1;
-    //string state;
-
-    obj1.setPrice();
-    obj1.setLicensePlate();
-    obj1.setKMxG();
-    obj1.setMileage();
-    obj1.setBrand();
-    obj1.setNumberSeats();
-    obj1.setNumberAirBag();
-    obj1.setState();
-    vecComfort.push_back(obj1); //toda la informacion la almacena en un vector
-
-    //luego, almacenara una matriz con 3 campos basicos que seran el inventario a mostrar
-    for (int i = 0; i < 30; i++){
-        for (int j = 0; j < 3; j++){
-            if (j < 1) {
-                inventory[i][j] = obj1.getBrand(); //por ejemplo
-            } else if (j < 2) {
-                inventory[i][j] = obj1.getLicensePlate();
-            } else if (j < 3) {
-                inventory[i][j] = obj1.getState();
-                /*if (obj1.getState() == true) {
-                    state = "Available";
-                    inventory[i][j] = state;
-                } else if (obj1.getState() == false) {
-                    state = "Not available";
-                    inventory[i][j] = state;*/
-                    //PONER EN TODOS LOS OBJETOS SI FUNCIONA
-                //}
-            }
-        }
-    }
-}
-
-<<<<<<< HEAD
-void eraseProviderUser(){
-    long search;
-    bool exist = false;
-    int opc;
-    Provider t2;
-
-    cout << "Input provider's ID: ";
-    cin >> search;
-    for (int i = 0; i < vecProvider.size(); i++){
-        t2 = vecProvider[i];
-        if (t2.getID() == search){
-            exist = true;
-            cout << "Are you sure you want to erase this user?\n";
-            cout << "1. Yes // 2. No: ";
-            cin >> opc;
-
-            switch (opc){
-                case 1: vecProvider.erase(vecProvider.begin() + i); break;
-                case 2: break; //or erase menu
-                default: cout << "Incorrect option\n";
-            }
-        } else if (!exist){
-            cout << "The ID has not been found.\n";
-            cout << "Make sure that the ID is correct.\n";
-=======
-void addSport(){
-    Sport obj2;
-
-    obj2.setPrice();
-    obj2.setLicensePlate();
-    obj2.setKMxG();
-    obj2.setMileage();
-    obj2.setBrand();
-    obj2.setState();
-    vecSport.push_back(obj2);
-
-    for (int i = 0; i < 30; i++){
-        for (int j = 0; j < 3; j++){
-            if (j < 1) {
-                inventory[i][j] = obj2.getBrand(); //por ejemplo
-            } else if (j < 2) {
-                inventory[i][j] = obj2.getLicensePlate();
-            } else if (j < 3) {
-                inventory[i][j] = obj2.getState();
-            }
->>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393
-        }
-    }
-}
-
-<<<<<<< HEAD
-void eraseSubscribedUser(){
-    long search;
-    bool exist = false;
-    int opc;
-    Subscribed t3;
-
-    cout << "Input subscribed's ID: ";
-    cin >> search;
-    for (int i = 0; i < vecSubscribed.size(); i++){
-        t3 = vecSubscribed[i];
-        if (t3.getID() == search){
-            exist = true;
-            cout << "Are you sure you want to erase this user?\n";
-            cout << "1. Yes // 2. No: ";
-            cin >> opc;
-
-            switch(opc){
-                case 1: vecSubscribed.erase(vecSubscribed.begin() + i); break;
-                case 2: break;
-                default: cout << "Incorrect option\n";
-            }
-        } else if (!exist){
-            cout << "The ID has not been found.\n";
-            cout << "Make sure that the ID is correct.\n";
-=======
-void addWork(){
-    Work obj3;
-
-    obj3.setPrice();
-    obj3.setLicensePlate();
-    obj3.setKMxG();
-    obj3.setMileage();
-    obj3.setBrand();
-    obj3.setCantTons();
-    obj3.setTrailer();
-    obj3.setState();
-    vecWork.push_back(obj3);
-
-    for (int i = 0; i < 30; i++){
-        for (int j = 0; j < 3; j++){
-            if (j < 1) {
-                inventory[i][j] = obj3.getBrand(); //por ejemplo
-            } else if (j < 2) {
-                inventory[i][j] = obj3.getLicensePlate();
-            } else if (j < 3) {
-                inventory[i][j] = obj3.getState();
-            }
->>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393
-        }
-    }
-}
-
-<<<<<<< HEAD
-
-
-
-=======
-//VER INVENTARIO EN ARCHIVO CSV
-void checkInventory(){
-    ofstream file ("inventory.csv", ofstream::app);
-
-    if (!file){
-        cout << "Error. Couldn't create 'inventory.csv'\n";
-    } else {
-        for (int i = 0; i < 30; i++) {
-            for (int j =0; j < 30; i++) {
-                if (j != 0) {
-                    file << " | ";
-                }
-                file << inventory[i][j];
-            }
-            file << "\n";
-        }
-        file.close();
-    }
-    file.close();
-}
->>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393

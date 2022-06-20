@@ -8,11 +8,7 @@
 #include <iostream>
 using namespace::std;
 
-<<<<<<< HEAD
 class Work: public Comfort{
-=======
-class Work: public Comfort {
->>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393
 private:
     int cantTons;
     bool trailer;

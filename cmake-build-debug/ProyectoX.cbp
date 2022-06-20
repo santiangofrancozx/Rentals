@@ -8,7 +8,6 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-<<<<<<< HEAD
 				<Option working_dir="/Users/user1/Desktop/Rentals/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
@@ -21,25 +20,10 @@
 			<Target title="ProyectoX">
 				<Option output="/Users/user1/Desktop/Rentals/cmake-build-debug/ProyectoX" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/user1/Desktop/Rentals/cmake-build-debug"/>
-=======
-				<Option working_dir="C:/Users/0612v/Documents/Rentals/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ProyectoX">
-				<Option output="C:/Users/0612v/Documents/Rentals/cmake-build-debug/ProyectoX.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/0612v/Documents/Rentals/cmake-build-debug"/>
->>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-<<<<<<< HEAD
 					<Add directory="/Users/user1/Desktop/Rentals/."/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.1.6/include"/>
@@ -57,32 +41,10 @@
 			<Target title="ProyectoX/fast">
 				<Option output="/Users/user1/Desktop/Rentals/cmake-build-debug/ProyectoX" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/user1/Desktop/Rentals/cmake-build-debug"/>
-=======
-					<Add directory="C:/Users/0612v/Documents/Rentals/."/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProyectoX"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ProyectoX/fast">
-				<Option output="C:/Users/0612v/Documents/Rentals/cmake-build-debug/ProyectoX.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/0612v/Documents/Rentals/cmake-build-debug"/>
->>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-<<<<<<< HEAD
 					<Add directory="/Users/user1/Desktop/Rentals/."/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.1.6/include"/>
@@ -164,91 +126,6 @@
 			<Option target="ProyectoX"/>
 		</Unit>
 		<Unit filename="/Users/user1/Desktop/Rentals/CMakeLists.txt">
-=======
-					<Add directory="C:/Users/0612v/Documents/Rentals/."/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProyectoX/fast"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/0612v/Documents/Rentals/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/0612v/Documents/Rentals/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/0612v/Documents/Rentals/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-		</Build>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Autos/Comfort.cpp">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Autos/Sport.cpp">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Autos/Work.cpp">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Classes/Autos_Clasees/Comfort.h">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Classes/Autos_Clasees/Sport.h">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Classes/Autos_Clasees/Work.h">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Classes/Users_Classes/Admin.h">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Classes/Users_Classes/Provider.h">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Classes/Users_Classes/Subscribed.h">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Classes/Users_Classes/User.h">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Main/main.cpp">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Users/Admin.cpp">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Users/Provider.cpp">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Users/Subscribed.cpp">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/Users/User.cpp">
-			<Option target="ProyectoX"/>
-		</Unit>
-		<Unit filename="C:/Users/0612v/Documents/Rentals/CMakeLists.txt">
->>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

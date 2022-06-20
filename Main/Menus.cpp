@@ -200,36 +200,23 @@ void menuAdmin(){
     do {
         cout << "Menu for administrators ;3\n";
         cout << "--------------------------\n";
-<<<<<<< HEAD
         cout << "1. Inventory menu\n";
         cout << "2. Clients options\n";
         cout << "3. Rent car\n";
-=======
-        cout << "1. Inventory\n";
-        cout << "2. Clients\n";
-        cout << "3. About\n";
->>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393
         cout << "0. Exit\n";
         cin >> opc;
         switch(opc){
-<<<<<<< HEAD
             case 1: inventoryMenu(); break;
             case 2: clientsFuntions(); break;
             case 3: rentCar(); break;
             case 0: break;
-=======
-        	case 1: inventoryFuntions(); break;
-        	case 2: clientsFuntions(); break;
-        	/*case 3: about(); break;*/
-            case 0: Menu(); break;
->>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393
             default:
                 cout<<"Wrong option, please try again.\n";
                 break;
         }
     }while(opc != 0);
 }
-<<<<<<< HEAD
+
 
 void addInventoryItemsMenu(){
     int opc;
@@ -289,5 +276,3 @@ void inventoryMenu(){
 }
 
 
-=======
->>>>>>> 903a29a9b54b210079ec2d5259df7e231c310393
