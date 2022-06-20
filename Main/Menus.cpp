@@ -184,7 +184,10 @@ void Menu(){
         switch (opc) {
             case 1: login(); break;
             case 2: /*web();*/ break;
-            case 3: /*about();*/ break;
+            case 3:
+                system("open /Users/user1/Desktop/Rentals/aboutWebPage/aboutWebPage.html ");
+                clean();
+                break;
             case 0: break;
             default:
                 cout<<"Wrong option, please try again.\n";
