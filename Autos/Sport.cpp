@@ -11,6 +11,7 @@ Sport::Sport(){
     price = KMxG = Mileage = 0;
     brand = license_plate = "-";
     state = true;
+    IDUserProperty = "Dont have id user property once\n";
 }
 
 Sport::~Sport(){
@@ -68,7 +69,7 @@ long Sport::getMileage(){
     return Mileage;
 }
 
-long  Sport::getIDUserProperty() {
+string  Sport::getIDUserProperty() {
     return IDUserProperty;
 }
 

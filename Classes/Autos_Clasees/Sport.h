@@ -12,7 +12,7 @@ private:
     long price, KMxG, Mileage;
     string brand, license_plate;
     bool state;
-    long IDUserProperty;
+    string IDUserProperty;
 public:
     Sport();
     virtual ~Sport();
@@ -29,7 +29,7 @@ public:
     string getLicensePlate();
     long getKMxG();
     long getMileage();
-    long getIDUserProperty();
+    string getIDUserProperty();
     string getBrand();
     string getState();
 };

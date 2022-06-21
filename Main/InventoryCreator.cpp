@@ -4,8 +4,7 @@
 #include "Classes/Autos_Clasees/Comfort.h"
 #include "Classes/Autos_Clasees/Sport.h"
 #include "Classes/Autos_Clasees/Work.h"
-#include "Main/metods.cpp"
-#include "Main/userCreator2000.cpp"
+
 using namespace::std;
 
 
@@ -69,7 +68,6 @@ void checkInventory(){
     cout<< "-----------------\n";
     cout<< "Comfort inventory\n";
     cout<< "-----------------\n";
-
     for (int i = 0; i < vecComfort.size(); ++i) {
         cout<< vecComfort[i].getBrand()
             << " " << vecComfort[i].getLicensePlate()
@@ -146,17 +144,65 @@ void generateCCB(int i){
                                    << "</td></tr></div>" << endl;
                         webComfort << "</body></html>" << endl;
                         system("open /Users/user1/Desktop/Rentals/cmake-build-debug/CCB.html");
+                        clean();
                     } else if (!exist) {
                         cout << "The ID has not been found.\n";
                         cout << "Make sure that the ID is correct.\n";
                         break;
+                        clean();
                     }
                 }
             }
             case 2:{
                 cout << "Register the user\n";
                 CreateUser();
+                long search;
+                bool exist = false;
+                User t1;
+                cout << "---------------------------------\n";
+                cout << "Search the user who wants to rent\n";
+                cout << "---------------------------------\n";
+                cout << "Input user's ID: ";
+                cin >> search;
+                for (int i = 0; i < vecUser.size(); i++) {
+                    t1 = vecUser[i];
+                    if (t1.getID() == search) {
+                        exist = true;
+                        cout << "\nInformation about user: \n";
+                        cout << t1.getLastname() << ", " << t1.getName() << endl;
+                        cout << t1.getUserName() << endl;
+                        cout << t1.getPhone() << endl;
+                        cout << t1.getMail() << endl;
+                        cout << "------------------------------\n";
+                        cout << "Input ID for complete the rent\n";
+                        cout << "------------------------------\n";
+                        vecComfort[i].setIDUserProperty();
 
+                        ofstream webComfort("CCB.html");
+                        webComfort
+                                << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>"
+                                << endl;
+                        webComfort << "<body><div><h1>COMFORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>"
+                                   << endl;
+                        webComfort << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+                        webComfort << "<div><p>Details of the rented car: </p>" << endl;
+
+                        webComfort << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
+                        webComfort << "<tr><td>Car's Brand </td><td class=\"data1\">" << vecComfort[i].getBrand()
+                                   << "</td></tr>" << endl;
+                        webComfort << "<tr><td>Car's License Plate </td><td class=\"data2\">"
+                                   << vecComfort[i].getLicensePlate() << "</td></tr>" << endl;
+                        webComfort << "<tr><td>Total Price </td><td class=\"data3\">" << vecComfort[i].getPrice()
+                                   << "</td></tr></div>" << endl;
+                        webComfort << "</body></html>" << endl;
+                        system("open /Users/user1/Desktop/Rentals/cmake-build-debug/CCB.html");
+                    } else if (!exist) {
+                        cout << "The ID has not been found.\n";
+                        cout << "Make sure that the ID is correct.\n";
+                        clean();
+                        break;
+                    }
+                }
             }
         }
     }while(opc != 0);
@@ -165,34 +211,194 @@ void generateCCB(int i){
 
 void generateSCB(int j){
     vecSport[j];
-    ofstream webComfort("SCB.html");
-    webComfort << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
-    webComfort << "<body><div><h1>SPORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
-    webComfort << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
-    webComfort << "<div><p>Details of the rented car: </p>" <<endl;
+    int opc;
+    do {
+        cout << "Registered user ? (1. yes, 2. not): ";
+        cin >> opc;
+        switch (opc) {
+            case 1: {
+                long search;
+                bool exist = false;
+                User t1;
 
-    webComfort << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
-    webComfort << "<tr><td>Car's Brand </td><td class=\"data1\">" << vecSport[j].getBrand() << "</td></tr>" << endl;
-    webComfort << "<tr><td>Car's License Plate </td><td class=\"data2\">" << vecSport[j].getLicensePlate() << "</td></tr>" << endl;
-    webComfort << "<tr><td>Total Price </td><td class=\"data3\">" << vecSport[j].getPrice() << "</td></tr></div>" << endl;
-    webComfort << "</body></html>" << endl;
-    system("open /Users/user1/Desktop/Rentals/cmake-build-debug/SCB.html");
+                cout << "Input user's ID: ";
+                cin >> search;
+                for (int i = 0; i < vecUser.size(); i++) {
+                    t1 = vecUser[i];
+                    if (t1.getID() == search) {
+                        exist = true;
+                        cout << "Information about user: \n";
+                        cout << t1.getLastname() << ", " << t1.getName() << endl;
+                        cout << t1.getUserName() << endl;
+                        cout << t1.getPhone() << endl;
+                        cout << t1.getMail() << endl;
+                        vecComfort[i].setIDUserProperty();
+
+                        ofstream webSport("SCB.html");
+                        webSport << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
+                        webSport << "<body><div><h1>SPORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
+                        webSport << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+                        webSport << "<div><p>Details of the rented car: </p>" <<endl;
+
+                        webSport << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
+                        webSport << "<tr><td>Car's Brand </td><td class=\"data1\">" << vecSport[j].getBrand() << "</td></tr>" << endl;
+                        webSport << "<tr><td>Car's License Plate </td><td class=\"data2\">" << vecSport[j].getLicensePlate() << "</td></tr>" << endl;
+                        webSport << "<tr><td>Total Price </td><td class=\"data3\">" << vecSport[j].getPrice() << "</td></tr></div>" << endl;
+                        webSport << "</body></html>" << endl;
+                        system("open /Users/user1/Desktop/Rentals/cmake-build-debug/SCB.html");
+                        clean();
+                    } else if (!exist) {
+                        cout << "The ID has not been found.\n";
+                        cout << "Make sure that the ID is correct.\n";
+                        break;
+                        clean();
+                    }
+                }
+            }
+            case 2:{
+                cout << "Register the user\n";
+                CreateUser();
+                long search;
+                bool exist = false;
+                User t1;
+                cout << "---------------------------------\n";
+                cout << "Search the user who wants to rent\n";
+                cout << "---------------------------------\n";
+                cout << "Input user's ID: ";
+                cin >> search;
+                for (int i = 0; i < vecUser.size(); i++) {
+                    t1 = vecUser[i];
+                    if (t1.getID() == search) {
+                        exist = true;
+                        cout << "\nInformation about user: \n";
+                        cout << t1.getLastname() << ", " << t1.getName() << endl;
+                        cout << t1.getUserName() << endl;
+                        cout << t1.getPhone() << endl;
+                        cout << t1.getMail() << endl;
+                        cout << "------------------------------\n";
+                        cout << "Input ID for complete the rent\n";
+                        cout << "------------------------------\n";
+                        vecComfort[i].setIDUserProperty();
+
+                        ofstream webSport("SCB.html");
+                        webSport << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
+                        webSport << "<body><div><h1>SPORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
+                        webSport << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+                        webSport << "<div><p>Details of the rented car: </p>" <<endl;
+
+                        webSport << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
+                        webSport << "<tr><td>Car's Brand </td><td class=\"data1\">" << vecSport[j].getBrand() << "</td></tr>" << endl;
+                        webSport << "<tr><td>Car's License Plate </td><td class=\"data2\">" << vecSport[j].getLicensePlate() << "</td></tr>" << endl;
+                        webSport << "<tr><td>Total Price </td><td class=\"data3\">" << vecSport[j].getPrice() << "</td></tr></div>" << endl;
+                        webSport << "</body></html>" << endl;
+                        system("open /Users/user1/Desktop/Rentals/cmake-build-debug/SCB.html");
+                    } else if (!exist) {
+                        cout << "The ID has not been found.\n";
+                        cout << "Make sure that the ID is correct.\n";
+                        clean();
+                        break;
+                    }
+                }
+            }
+        }
+    }while(opc != 0);
+
 }
 
 void generateWCB(int k){
     vecWork[k];
-    ofstream webComfort("WCB.html");
-    webComfort << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
-    webComfort << "<body><div><h1>WORK CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
-    webComfort << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
-    webComfort << "<div><p>Details of the rented car: </p>" <<endl;
+    int opc;
+    do {
+        cout << "Registered user ? (1. yes, 2. not): ";
+        cin >> opc;
+        switch (opc) {
+            case 1: {
+                long search;
+                bool exist = false;
+                User t1;
 
-    webComfort << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
-    webComfort << "<tr><td>Car's Brand </td><td class=\"data1\">" << vecWork[k].getBrand() << "</td></tr>" << endl;
-    webComfort << "<tr><td>Car's License Plate </td><td class=\"data2\">" << vecWork[k].getLicensePlate() << "</td></tr>" << endl;
-    webComfort << "<tr><td>Total Price </td><td class=\"data3\">" << vecWork[k].getPrice() << "</td></tr></div>" << endl;
-    webComfort << "</body></html>" << endl;
-    system("open /Users/user1/Desktop/Rentals/cmake-build-debug/WCB.html");
+                cout << "Input user's ID: ";
+                cin >> search;
+                for (int i = 0; i < vecUser.size(); i++) {
+                    t1 = vecUser[i];
+                    if (t1.getID() == search) {
+                        exist = true;
+                        cout << "Information about user: \n";
+                        cout << t1.getLastname() << ", " << t1.getName() << endl;
+                        cout << t1.getUserName() << endl;
+                        cout << t1.getPhone() << endl;
+                        cout << t1.getMail() << endl;
+                        vecComfort[i].setIDUserProperty();
+
+                        ofstream webWork("WCB.html");
+                        webWork << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
+                        webWork << "<body><div><h1>WORK CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
+                        webWork << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+                        webWork << "<div><p>Details of the rented car: </p>" <<endl;
+
+                        webWork << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
+                        webWork << "<tr><td>Car's Brand </td><td class=\"data1\">" << vecWork[k].getBrand() << "</td></tr>" << endl;
+                        webWork << "<tr><td>Car's License Plate </td><td class=\"data2\">" << vecWork[k].getLicensePlate() << "</td></tr>" << endl;
+                        webWork << "<tr><td>Total Price </td><td class=\"data3\">" << vecWork[k].getPrice() << "</td></tr></div>" << endl;
+                        webWork << "</body></html>" << endl;
+                        system("open /Users/user1/Desktop/Rentals/cmake-build-debug/WCB.html");
+                        clean();
+                    } else if (!exist) {
+                        cout << "The ID has not been found.\n";
+                        cout << "Make sure that the ID is correct.\n";
+                        break;
+                        clean();
+                    }
+                }
+            }
+            case 2:{
+                cout << "Register the user\n";
+                CreateUser();
+                long search;
+                bool exist = false;
+                User t1;
+                cout << "---------------------------------\n";
+                cout << "Search the user who wants to rent\n";
+                cout << "---------------------------------\n";
+                cout << "Input user's ID: ";
+                cin >> search;
+                for (int i = 0; i < vecUser.size(); i++) {
+                    t1 = vecUser[i];
+                    if (t1.getID() == search) {
+                        exist = true;
+                        cout << "\nInformation about user: \n";
+                        cout << t1.getLastname() << ", " << t1.getName() << endl;
+                        cout << t1.getUserName() << endl;
+                        cout << t1.getPhone() << endl;
+                        cout << t1.getMail() << endl;
+                        cout << "------------------------------\n";
+                        cout << "Input ID for complete the rent\n";
+                        cout << "------------------------------\n";
+                        vecComfort[i].setIDUserProperty();
+
+                        ofstream webWork("WCB.html");
+                        webWork << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
+                        webWork << "<body><div><h1>WORK CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
+                        webWork << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+                        webWork << "<div><p>Details of the rented car: </p>" <<endl;
+
+                        webWork << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
+                        webWork << "<tr><td>Car's Brand </td><td class=\"data1\">" << vecWork[k].getBrand() << "</td></tr>" << endl;
+                        webWork << "<tr><td>Car's License Plate </td><td class=\"data2\">" << vecWork[k].getLicensePlate() << "</td></tr>" << endl;
+                        webWork << "<tr><td>Total Price </td><td class=\"data3\">" << vecWork[k].getPrice() << "</td></tr></div>" << endl;
+                        webWork << "</body></html>" << endl;
+                        system("open /Users/user1/Desktop/Rentals/cmake-build-debug/WCB.html");
+                    } else if (!exist) {
+                        cout << "The ID has not been found.\n";
+                        cout << "Make sure that the ID is correct.\n";
+                        clean();
+                        break;
+                    }
+                }
+            }
+        }
+    }while(opc != 0);
+
 }
 
 void rentCar(){
