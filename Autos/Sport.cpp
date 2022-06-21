@@ -47,6 +47,11 @@ void Sport::setState(){
     state = false;
 }
 
+void Sport::setIDUserProperty() {
+    cout << "Input user's ID who wants to rent: ";
+    cin>> IDUserProperty;
+}
+
 long Sport::getPrice(){
     return price;
 }
@@ -61,6 +66,10 @@ long Sport::getKMxG(){
 
 long Sport::getMileage(){
     return Mileage;
+}
+
+long  Sport::getIDUserProperty() {
+    return IDUserProperty;
 }
 
 string Sport::getBrand(){

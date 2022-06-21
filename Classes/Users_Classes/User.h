@@ -24,6 +24,7 @@ class User: public Admin{
         string mail, name, lastname;
         long ID, phone;
 
+
     protected:
 };
 
