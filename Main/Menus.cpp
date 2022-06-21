@@ -281,6 +281,7 @@ void inventoryMenu(){
         cout << "1. Check inventory\n";
         cout << "2. Add items\n";
         cout << "3. See rented items\n";
+        cout << "4. Search car\n";
         cout << "0. Go back\n";
         cout<< "-> ";
         cin>> opc;
@@ -289,6 +290,7 @@ void inventoryMenu(){
             case 1: checkInventory(); break;
             case 2: addInventoryItemsMenu(); break;
             case 3: rentedItems(); break;
+            case 4: searchCar(); break;
             case 0:
                 break;
             default:
@@ -299,4 +301,34 @@ void inventoryMenu(){
     clean();
 }
 
+void menuCommonUser(){
+    cout << "--------------------\n";
+    cout << "Common user menu: \n";
+    cout << "--------------------\n";
+    cout << "1. See my rented cars\b";
+    cout << "2. See inventory for availability\n";
+    cout << "3. See my personal data\n";
+    cout << "4. See my bills\n";
+    cout << "0. Go back\n";
+}
 
+void menuProvider(){
+    cout << "--------------------\n";
+    cout << "Provider menu: \n";
+    cout << "--------------------\n";
+    cout << "1. See inventory in terminal\n";
+    cout << "2. See inventory in web\n";
+    cout << "3. Entertainment\n"; //limk a algun video de carros no se
+}
+
+void menuSubscribed(){
+    cout << "--------------------\n";
+    cout << "Subscribed user menu: \n";
+    cout << "--------------------\n";
+    cout << "1. See my rented cars\b";
+    cout << "2. See inventory for availability\n";
+    cout << "3. See my personal data\n";
+    cout << "4. See my bills\n";
+    cout << "5. See mi discounts\n";
+    cout << "0. Go back\n";
+}
