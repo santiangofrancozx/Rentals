@@ -18,7 +18,7 @@ Sport::~Sport(){
     //DTOR
 }
 
-void Sport::setPrice(){
+void Sport::Price(){
     cout<<"Set price: ";
     cin>>price;
 }
