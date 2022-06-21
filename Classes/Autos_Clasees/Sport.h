@@ -17,7 +17,8 @@ public:
     Sport();
     virtual ~Sport();
 
-    void setPrice();
+    virtual void Price();
+
     void setLicensePlate();
     void setKMxG();
     void setMileage();
@@ -26,6 +27,7 @@ public:
     void setIDUserProperty();
 
     long getPrice();
+
     string getLicensePlate();
     long getKMxG();
     long getMileage();
