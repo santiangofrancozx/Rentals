@@ -9,11 +9,13 @@ using namespace::std;
 
 class Sport{
 private:
-    long price, KMxG, Mileage;
+    long KMxG, Mileage;
     string brand, license_plate;
     bool state;
     string IDUserProperty;
 public:
+    long price;
+
     Sport();
     virtual ~Sport();
 
