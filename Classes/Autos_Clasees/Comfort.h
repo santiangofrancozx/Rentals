@@ -17,7 +17,7 @@ public:
     Comfort();
     virtual ~Comfort();
 
-    void Price();
+    virtual void Price();
 
     void setNumberSeats();
     void setNumberAirBag();

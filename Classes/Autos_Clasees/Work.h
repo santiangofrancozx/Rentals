@@ -16,7 +16,7 @@ public:
     Work();
     virtual ~Work();
 
-    void Price();
+    virtual void Price();
 
     void setCantTons();
     void setTrailer();
