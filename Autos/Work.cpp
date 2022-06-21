@@ -25,6 +25,12 @@ void Work::setTrailer(){
     cin>>trailer;
 }
 
+void Work::Price() {
+    cout<<"Set price: ";
+    cin >> subtotal;
+    price = (subtotal * 0.75) + subtotal;
+}
+
 int Work::getCantTons(){
     return cantTons;
 }
