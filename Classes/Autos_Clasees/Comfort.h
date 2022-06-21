@@ -11,8 +11,9 @@ using namespace::std;
 class Comfort: public Sport{
 private:
     int numberSeats, numberAirBag;
-    long subtotal;
 public:
+    long subtotal;
+
     Comfort();
     virtual ~Comfort();
 
