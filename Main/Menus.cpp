@@ -11,16 +11,13 @@ using namespace::std;
 //Definicion de metodos
 void menuAdmin();
 void login();
-void clean();
 void firstRun();
 void Menu();
 void inventoryMenu();
 void addInventoryItemsMenu();
 
 //Implementacion de metodos
-void clean(){
-    system("clear");
-}
+
 void firstRun(){
     Admin objAdmin;
     string verify;
@@ -36,6 +33,7 @@ void firstRun(){
         cout<<"Great, now u can use this program, :3 \n";
     } else{
         do {
+            clear();
             cout << "Oh no, the password don't match. :c\n";
             cout << "Verify ur password: ";
             cin >> verify;
@@ -46,7 +44,7 @@ void firstRun(){
 }
 
 void login(){
-    clean();
+    clear();
     string username, password;
     int type;
     int opc;
@@ -77,8 +75,8 @@ void login(){
                     adm = vecAdmin[x];
                     if (username == adm.getUserName()) {
                         if (password == adm.getPassword()) {
+                            clear();
                             menuAdmin();
-                            clean();
                             opc = 0;
                             break;
                         }else {
@@ -99,8 +97,8 @@ void login(){
                     usr = vecUser[x];
                     if (username == usr.getUserName()) {
                         if (password == usr.getPassword()) {
+                            clear();
                             cout << "hola bb user\n";
-                            clean();
                             opc = 0;
                             break;
                         }else {
@@ -121,8 +119,8 @@ void login(){
                     ssd = vecSubscribed[x];
                     if (username == ssd.getUserName()) {
                         if (password == ssd.getPassword()) {
+                            clear();
                             cout << "a que hora pasas por el pan subscribed(?)\n";
-                            clean();
                             opc = 0;
                             break;
                         }else {
@@ -143,8 +141,8 @@ void login(){
                     prv = vecProvider[x];
                     if (username == prv.getUserName()) {
                         if (password == prv.getPassword()) {
+                            clear();
                             cout << "pa donde tan dindo provider\n";
-                            clean();
                             opc = 0;
                             break;
                         }else {
@@ -183,19 +181,23 @@ void Menu(){
         cin >> opc;
         switch (opc) {
             case 1: login(); break;
-            case 2: /*web();*/ break;
+            case 2:
+                system("open https://www.youtube.com/watch?v=xn21hH7kyx8");
+                clean();
+                break;
             case 3:
                 system("open /Users/user1/Desktop/Rentals/aboutWebPage/aboutWebPage.html ");
                 clean();
                 break;
-            case 0: break;
+            case 0:
+                break;
             default:
                 cout<<"Wrong option, please try again.\n";
                 clean();
                 break;
         }
     }while(opc != 0);
-
+    clean();
 }
 
 void menuAdmin(){
@@ -207,14 +209,26 @@ void menuAdmin(){
         cout << "2. Clients options\n";
         cout << "3. Rent car\n";
         cout << "0. Exit\n";
+        cout << "-> ";
         cin >> opc;
         switch(opc){
-            case 1: inventoryMenu(); break;
-            case 2: clientsFuntions(); break;
-            case 3: rentCar(); break;
-            case 0: break;
+            case 1:
+                clear();
+                inventoryMenu();
+                break;
+            case 2:
+                clear();
+                clientsFuntions();
+                break;
+            case 3:
+                clear();
+                rentCar();
+                break;
+            case 0:
+                break;
             default:
                 cout<<"Wrong option, please try again.\n";
+                clean();
                 break;
         }
     }while(opc != 0);
@@ -222,6 +236,7 @@ void menuAdmin(){
 
 
 void addInventoryItemsMenu(){
+    clear();
     int opc;
     Sport SportObj;
     Comfort ComfortObj;
@@ -244,22 +259,25 @@ void addInventoryItemsMenu(){
             case 3:
                 addWork();
                 break;
-            case 0: break;
+            case 0:
+                break;
 
             default:
                 cout<< "Wrong option, please try again\n";
+                clean();
                 break;
         }
     }while(opc != 0);
-
+    clean();
 }
 
 
 void inventoryMenu(){
     int opc;
     do {
+        cout << "--------------\n";
         cout << "Inventory Menu\n";
-        cout << "--------------\n\n";
+        cout << "--------------\n";
         cout << "1. Check inventory\n";
         cout << "2. Add items\n";
         cout << "3. See rented items\n";
@@ -271,11 +289,14 @@ void inventoryMenu(){
             case 1: checkInventory(); break;
             case 2: addInventoryItemsMenu(); break;
             case 3: rentedItems(); break;
-            case 0: break;
+            case 0:
+                break;
             default:
                 cout<< "Wrong option, please try again\n";
+                clean();
         }
     }while(opc != 0);
+    clean();
 }
 
 

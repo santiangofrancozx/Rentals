@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "fstream"
 #include "Classes/Autos_Clasees/Comfort.h"
 #include "Classes/Autos_Clasees/Sport.h"
@@ -9,6 +10,15 @@ using namespace::std;
 vector <Sport> vecSport;
 vector <Comfort> vecComfort;
 vector <Work> vecWork;
+
+void clean(){
+    system( "read -n 1 -s -p \"Press any key to continue...\"" );
+    system("clear");
+}
+
+void clear(){
+    system("clear");
+}
 
 //AGREGAR ITEMS
 void addComfort(){
@@ -23,7 +33,7 @@ void addComfort(){
     obj1.setNumberSeats();
     obj1.setNumberAirBag();
     vecComfort.push_back(obj1); //toda la informacion la almacena en un vector
-    system("clear");
+    clean();
 }
 
 void addSport(){
@@ -35,7 +45,7 @@ void addSport(){
     obj2.setMileage();
     obj2.setBrand();
     vecSport.push_back(obj2);
-    system("clear");
+    clean();
 }
 
 void addWork(){
@@ -49,12 +59,14 @@ void addWork(){
     obj3.setCantTons();
     obj3.setTrailer();
     vecWork.push_back(obj3);
-    system("clear");
+    clean();
 }
 
 //VER INVENTARIO EN ARCHIVO CSV
 void checkInventory(){
-    cout<< "Comfort inventory\n\n";
+    cout<< "-----------------\n";
+    cout<< "Comfort inventory\n";
+    cout<< "-----------------\n";
     for (int i = 0; i < vecComfort.size(); ++i) {
         cout<< vecComfort[i].getBrand()
             << " " << vecComfort[i].getLicensePlate()
@@ -62,7 +74,9 @@ void checkInventory(){
             << " " << vecComfort[i].getState()
             << endl;
     }
-    cout<< "Sport inventory\n\n";
+    cout<< "---------------\n";
+    cout<< "Sport inventory\n";
+    cout<< "---------------\n";
     for (int j = 0; j < vecSport.size(); ++j) {
         cout<< vecSport[j].getBrand()
             << " " << vecSport[j].getLicensePlate()
@@ -70,7 +84,9 @@ void checkInventory(){
             << " " << vecSport[j].getState()
             << endl;
     }
-    cout<< "Work inventory\n\n";
+    cout<< "--------------\n";
+    cout<< "Work inventory\n";
+    cout<< "--------------\n";
     for (int k = 0; k < vecWork.size(); ++k) {
         cout<< vecWork[k].getBrand()
             << " " << vecWork[k].getLicensePlate()
@@ -78,7 +94,55 @@ void checkInventory(){
             << " " << vecWork[k].getState()
             << endl;
     }
-    system("clear");
+    clean();
+}
+vector <string> webComfortVec;
+void generateCCB(int i){
+    vecComfort[i];
+    ofstream webComfort("CCB.html");
+    webComfort << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
+    webComfort << "<body><div><h1>COMFORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
+    webComfort << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+    webComfort << "<div><p>Details of the rented car: </p>" <<endl;
+
+    webComfort << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
+    webComfort << "<tr><td>Car's Brand </td><td class=\"data1\">" << vecComfort[i].getBrand() << "</td></tr>" << endl;
+    webComfort << "<tr><td>Car's License Plate </td><td class=\"data2\">" << vecComfort[i].getLicensePlate() << "</td></tr>" << endl;
+    webComfort << "<tr><td>Total Price </td><td class=\"data3\">" << vecComfort[i].getPrice() << "</td></tr></div>" << endl;
+    webComfort << "</body></html>" << endl;
+    system("open /Users/user1/Desktop/Rentals/cmake-build-debug/CCB.html");
+}
+
+void generateSCB(int j){
+    vecSport[j];
+    ofstream webComfort("SCB.html");
+    webComfort << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
+    webComfort << "<body><div><h1>SPORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
+    webComfort << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+    webComfort << "<div><p>Details of the rented car: </p>" <<endl;
+
+    webComfort << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
+    webComfort << "<tr><td>Car's Brand </td><td class=\"data1\">" << vecSport[j].getBrand() << "</td></tr>" << endl;
+    webComfort << "<tr><td>Car's License Plate </td><td class=\"data2\">" << vecSport[j].getLicensePlate() << "</td></tr>" << endl;
+    webComfort << "<tr><td>Total Price </td><td class=\"data3\">" << vecSport[j].getPrice() << "</td></tr></div>" << endl;
+    webComfort << "</body></html>" << endl;
+    system("open /Users/user1/Desktop/Rentals/cmake-build-debug/SCB.html");
+}
+
+void generateWCB(int k){
+    vecWork[k];
+    ofstream webComfort("WCB.html");
+    webComfort << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
+    webComfort << "<body><div><h1>WORK CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
+    webComfort << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+    webComfort << "<div><p>Details of the rented car: </p>" <<endl;
+
+    webComfort << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
+    webComfort << "<tr><td>Car's Brand </td><td class=\"data1\">" << vecWork[k].getBrand() << "</td></tr>" << endl;
+    webComfort << "<tr><td>Car's License Plate </td><td class=\"data2\">" << vecWork[k].getLicensePlate() << "</td></tr>" << endl;
+    webComfort << "<tr><td>Total Price </td><td class=\"data3\">" << vecWork[k].getPrice() << "</td></tr></div>" << endl;
+    webComfort << "</body></html>" << endl;
+    system("open /Users/user1/Desktop/Rentals/cmake-build-debug/WCB.html");
 }
 
 void rentCar(){
@@ -123,7 +187,7 @@ void rentCar(){
                         } else {
                             if(vecComfort[i].getState() == "Available") {
                                 vecComfort[i].setState();
-                                //generateBill();
+                                generateCCB(i);
                                 break;
                             } else {
                                 cout << "Sorry, this item is out of stock\n";
@@ -168,7 +232,7 @@ void rentCar(){
                         } else {
                             if(vecSport[i].getState() == "Available") {
                                 vecSport[i].setState();
-                                //generateBill();
+                                generateSCB(i);
                                 break;
                             } else {
                                 cout << "Sorry, this item is out of stock\n";
@@ -217,7 +281,7 @@ void rentCar(){
                         } else {
                             if(vecWork[i].getState() == "Available") {
                                 vecWork[i].setState();
-                                //generateBill();
+                                generateWCB(i);
                                 break;
                             } else {
                                 cout << "Sorry, this item is out of stock";
@@ -239,8 +303,6 @@ void rentCar(){
                 break;
         }
     }while(opc != 0);
-    system("pause");
-    system("clear");
 }
 
 void rentedItems(){
@@ -292,4 +354,5 @@ void rentedItems(){
             break;
         }
     }
+    clean();
 }

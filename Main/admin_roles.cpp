@@ -98,6 +98,7 @@ void clientsFuntions(){
             default: cout << "Incorrect option\n";
         }
     }while(opc != 0);
+    clean();
 }
 
 //2. agregar item
