@@ -1,9 +1,10 @@
 #include <iostream>
 #include <vector>
-#include "fstream"
+#include <fstream>
 #include "Classes/Autos_Clasees/Comfort.h"
 #include "Classes/Autos_Clasees/Sport.h"
 #include "Classes/Autos_Clasees/Work.h"
+#include "Main/Menus.cpp" //si algo quita esta linea, yo la puse porque sino, me daba error
 
 using namespace::std;
 
@@ -26,7 +27,7 @@ void addComfort(){
     Comfort obj1;
     //string state;
 
-    obj1.setPrice();
+    obj1.Price();
     obj1.setLicensePlate();
     obj1.setKMxG();
     obj1.setMileage();
@@ -40,7 +41,7 @@ void addComfort(){
 void addSport(){
     Sport obj2;
 
-    obj2.setPrice();
+    obj2.Price();
     obj2.setLicensePlate();
     obj2.setKMxG();
     obj2.setMileage();
@@ -52,7 +53,7 @@ void addSport(){
 void addWork(){
     Work obj3;
 
-    obj3.setPrice();
+    obj3.Price();
     obj3.setLicensePlate();
     obj3.setKMxG();
     obj3.setMileage();
@@ -100,12 +101,13 @@ void checkInventory(){
     }
     clean();
 }
-vector <string> webComfortVec;
+
+
 void generateCCB(int i){
     vecComfort[i];
     int opc;
     do {
-        cout << "Registered user ? (1. yes, 2. not): ";
+        cout << "Registered user? (1. yes, 2. not): ";
         cin >> opc;
         switch (opc) {
             case 1: {
@@ -127,12 +129,12 @@ void generateCCB(int i){
                         vecComfort[i].setIDUserProperty();
 
                         ofstream webComfort("CCB.html");
-                        webComfort
-                                << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>"
-                                << endl;
+                        webComfort << "<html><head><title>CCB</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>"
+                                   << endl;
                         webComfort << "<body><div><h1>COMFORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>"
                                    << endl;
                         webComfort << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+                        webComfort << "<div><span class=\"ID\">" << vecComfort[i].getIDUserProperty() << "</span></div>" << endl;
                         webComfort << "<div><p>Details of the rented car: </p>" << endl;
 
                         webComfort << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -153,7 +155,7 @@ void generateCCB(int i){
                     }
                 }
             }
-            case 2:{
+            case 2: {
                 cout << "Register the user\n";
                 CreateUser();
                 long search;
@@ -180,11 +182,12 @@ void generateCCB(int i){
 
                         ofstream webComfort("CCB.html");
                         webComfort
-                                << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>"
+                                << "<html><head><title>CCB</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>"
                                 << endl;
                         webComfort << "<body><div><h1>COMFORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>"
                                    << endl;
                         webComfort << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+                        webComfort << "<div><span class=\"ID\">" << vecComfort[i].getIDUserProperty() << "</span></div>" << endl;
                         webComfort << "<div><p>Details of the rented car: </p>" << endl;
 
                         webComfort << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -206,14 +209,13 @@ void generateCCB(int i){
             }
         }
     }while(opc != 0);
-
 }
 
 void generateSCB(int j){
     vecSport[j];
     int opc;
     do {
-        cout << "Registered user ? (1. yes, 2. not): ";
+        cout << "Registered user? (1. yes, 2. not): ";
         cin >> opc;
         switch (opc) {
             case 1: {
@@ -232,12 +234,13 @@ void generateSCB(int j){
                         cout << t1.getUserName() << endl;
                         cout << t1.getPhone() << endl;
                         cout << t1.getMail() << endl;
-                        vecComfort[i].setIDUserProperty();
+                        vecSport[i].setIDUserProperty();
 
                         ofstream webSport("SCB.html");
-                        webSport << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
+                        webSport << "<html><head><title>SCB</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
                         webSport << "<body><div><h1>SPORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
                         webSport << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+                        webSport << "<div><span class=\"ID\">" << vecSport[i].getIDUserProperty() << "</span></div>" << endl;
                         webSport << "<div><p>Details of the rented car: </p>" <<endl;
 
                         webSport << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -255,7 +258,7 @@ void generateSCB(int j){
                     }
                 }
             }
-            case 2:{
+            case 2: {
                 cout << "Register the user\n";
                 CreateUser();
                 long search;
@@ -278,12 +281,13 @@ void generateSCB(int j){
                         cout << "------------------------------\n";
                         cout << "Input ID for complete the rent\n";
                         cout << "------------------------------\n";
-                        vecComfort[i].setIDUserProperty();
+                        vecSport[i].setIDUserProperty();
 
                         ofstream webSport("SCB.html");
-                        webSport << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
+                        webSport << "<html><head><title>SCB</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
                         webSport << "<body><div><h1>SPORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
                         webSport << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+                        webSport << "<div><span class=\"ID\">" << vecSport[i].getIDUserProperty() << "</span></div>" << endl;
                         webSport << "<div><p>Details of the rented car: </p>" <<endl;
 
                         webSport << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -302,14 +306,13 @@ void generateSCB(int j){
             }
         }
     }while(opc != 0);
-
 }
 
 void generateWCB(int k){
     vecWork[k];
     int opc;
     do {
-        cout << "Registered user ? (1. yes, 2. not): ";
+        cout << "Registered user? (1. yes, 2. not): ";
         cin >> opc;
         switch (opc) {
             case 1: {
@@ -328,12 +331,13 @@ void generateWCB(int k){
                         cout << t1.getUserName() << endl;
                         cout << t1.getPhone() << endl;
                         cout << t1.getMail() << endl;
-                        vecComfort[i].setIDUserProperty();
+                        vecWork[i].setIDUserProperty();
 
                         ofstream webWork("WCB.html");
-                        webWork << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
+                        webWork << "<html><head><title>WCB</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
                         webWork << "<body><div><h1>WORK CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
                         webWork << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+                        webWork << "<div><span class=\"ID\">" << vecWork[i].getIDUserProperty() << "</span></div>" << endl;
                         webWork << "<div><p>Details of the rented car: </p>" <<endl;
 
                         webWork << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -374,12 +378,13 @@ void generateWCB(int k){
                         cout << "------------------------------\n";
                         cout << "Input ID for complete the rent\n";
                         cout << "------------------------------\n";
-                        vecComfort[i].setIDUserProperty();
+                        vecWork[i].setIDUserProperty();
 
                         ofstream webWork("WCB.html");
                         webWork << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
                         webWork << "<body><div><h1>WORK CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
                         webWork << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+                        webWork << "<div><span class=\"ID\">" << vecWork[i].getIDUserProperty() << "</span></div>" << endl;
                         webWork << "<div><p>Details of the rented car: </p>" <<endl;
 
                         webWork << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -398,7 +403,6 @@ void generateWCB(int k){
             }
         }
     }while(opc != 0);
-
 }
 
 void rentCar(){
