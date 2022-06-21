@@ -9,6 +9,7 @@ using namespace::std;
 
 Comfort::Comfort() {
     numberSeats = numberAirBag = 0;
+    subtotal = 0;
 }
 
 Comfort::~Comfort() {
@@ -23,6 +24,12 @@ void Comfort::setNumberSeats(){
 void Comfort::setNumberAirBag(){
     cout<<"Number of air bags: ";
     cin>>numberAirBag;
+}
+
+void Comfort::Price(){
+    cout<<"Set price: ";
+    cin >> subtotal;
+    price = (subtotal * 0.5) + subtotal;
 }
 
 int Comfort::getNumberSeats(){
