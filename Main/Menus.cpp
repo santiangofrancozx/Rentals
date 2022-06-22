@@ -15,6 +15,10 @@ void firstRun();
 void Menu();
 void inventoryMenu();
 void addInventoryItemsMenu();
+void menuCommonUser();
+void menuProvider();
+void menuSubscribed();
+
 
 //Implementacion de metodos
 
@@ -60,10 +64,12 @@ void login(){
         cin >> type;
         //limpiar pantalla
 
-        cout << "Input your username: ";
+        cout << "Input your username: \n";
+        cout << "-> ";
         fflush(stdin);
         getline(cin, username);
-        cout << "Input your password: ";
+        cout << "Input your password: \n";
+        cout << "-> ";
         fflush(stdin);
         getline(cin, password);
         //optar por retirar tipos de usuarios en menu, pero los switch optimizan la ram
@@ -98,7 +104,7 @@ void login(){
                     if (username == usr.getUserName()) {
                         if (password == usr.getPassword()) {
                             clear();
-                            cout << "hola bb user\n";
+                            menuCommonUser();
                             opc = 0;
                             break;
                         }else {
@@ -120,7 +126,7 @@ void login(){
                     if (username == ssd.getUserName()) {
                         if (password == ssd.getPassword()) {
                             clear();
-                            cout << "a que hora pasas por el pan subscribed(?)\n";
+                            menuSubscribed();
                             opc = 0;
                             break;
                         }else {
@@ -142,7 +148,7 @@ void login(){
                     if (username == prv.getUserName()) {
                         if (password == prv.getPassword()) {
                             clear();
-                            cout << "pa donde tan dindo provider\n";
+                            menuProvider();
                             opc = 0;
                             break;
                         }else {
@@ -182,11 +188,12 @@ void Menu(){
         switch (opc) {
             case 1: login(); break;
             case 2:
-                system("open https://www.youtube.com/watch?v=6638-jQvs8I");
+                //revisa esa ruta owo maybe no te coincida o si
+                system("open /Users/user1/Desktop/Rentals/invitedWebPage/invitedWebPage.html");
                 clean();
                 break;
             case 3:
-                system("open /Users/user1/Desktop/Rentals/aboutWebPage/aboutWebPage.html ");
+                system("open /Users/user1/Desktop/Rentals/aboutWebPage/aboutWebPage.html");
                 clean();
                 break;
             case 0:
@@ -282,15 +289,32 @@ void inventoryMenu(){
         cout << "2. Add items\n";
         cout << "3. See rented items\n";
         cout << "4. Search car\n";
+        cout << "5. Erase item\n";
         cout << "0. Go back\n";
-        cout<< "-> ";
-        cin>> opc;
+        cout << "-> ";
+        cin >> opc;
 
         switch (opc) {
-            case 1: checkInventory(); break;
-            case 2: addInventoryItemsMenu(); break;
-            case 3: rentedItems(); break;
-            case 4: searchCar(); break;
+            case 1:
+                clear();
+                checkInventory();
+                break;
+            case 2:
+                clear();
+                addInventoryItemsMenu();
+                break;
+            case 3:
+                clear();
+                rentedItems();
+                break;
+            case 4:
+                clear();
+                searchCar();
+                break;
+            case 5:
+                clear();
+                eraseCar();
+                break;
             case 0:
                 break;
             default:
@@ -301,34 +325,133 @@ void inventoryMenu(){
     clean();
 }
 
+
 void menuCommonUser(){
-    cout << "--------------------\n";
-    cout << "Common user menu: \n";
-    cout << "--------------------\n";
-    cout << "1. See my rented cars\b";
-    cout << "2. See inventory for availability\n";
-    cout << "3. See my personal data\n";
-    cout << "4. See my bills\n";
-    cout << "0. Go back\n";
+    int opc;
+    do {
+        cout << "--------------------\n";
+        cout << "Common user menu: \n";
+        cout << "--------------------\n";
+        cout << "1. See my bills\n";
+        cout << "0. Go back\n";
+        cout << "-> ";
+        cin >> opc;
+
+        switch (opc) {
+            case 1: {
+                clear();
+                string ID;
+                cout << "Input ur ID: ";
+                cin >> ID;
+                for (int i = 0; i < vecComfort.size(); i++) {
+                    if(vecComfort[i].getIDUserProperty() == ID){
+                        generateCCB(i, ID);
+                    }
+                }
+                for (int i = 0; i < vecSport.size(); i++) {
+                    if(vecSport[i].getIDUserProperty() == ID){
+                        generateSCB(i, ID);
+                    }
+                }
+                for (int i = 0; i < vecWork.size(); i++) {
+                    if(vecWork[i].getIDUserProperty() == ID){
+                        generateWCB(i, ID);
+                    }
+                }
+            };
+                break;
+            case 0:
+                break;
+            default:
+                cout<< "Wrong option, please try again\n";
+                clean();
+        }
+    }while(opc != 0);
+    clean();
 }
 
 void menuProvider(){
-    cout << "--------------------\n";
-    cout << "Provider menu: \n";
-    cout << "--------------------\n";
-    cout << "1. See inventory in terminal\n";
-    cout << "2. See inventory in web\n";
-    cout << "3. Entertainment\n"; //limk a algun video de carros no se
+    int opc;
+    do {
+        cout << "--------------------\n";
+        cout << "Provider menu: \n";
+        cout << "--------------------\n";
+        cout << "1. See inventory in web\n";
+        cout << "0, Go back\n";
+        cout << "-> ";
+        cin >> opc;
+
+        switch (opc) {
+            case 1:
+                clear();
+                checkInventory();
+                break;
+            case 0:
+                break;
+            default:
+                cout << "Wrong option, please try again\n";
+                clean();
+                break;
+        }
+    }while(opc != 0);
+    clean();
 }
 
 void menuSubscribed(){
-    cout << "--------------------\n";
-    cout << "Subscribed user menu: \n";
-    cout << "--------------------\n";
-    cout << "1. See my rented cars\b";
-    cout << "2. See inventory for availability\n";
-    cout << "3. See my personal data\n";
-    cout << "4. See my bills\n";
-    cout << "5. See mi discounts\n";
-    cout << "0. Go back\n";
+    int opc;
+    do {
+        cout << "--------------------\n";
+        cout << "Subscribed user menu: \n";
+        cout << "--------------------\n";
+        cout << "1. See my bills\b";
+        cout << "2. See inventory for availability\n";
+        cout << "3. See my personal data\n";
+        cout << "4. See my discounts\n";
+        cout << "0. Go back\n";
+        cout << "-> ";
+        cin >> opc;
+
+        switch (opc) {
+            case 1:{
+                clear();
+                string ID;
+                cout << "Input ur ID: ";
+                cin >> ID;
+                for (int i = 0; i < vecComfort.size(); i++) {
+                    if(vecComfort[i].getIDUserProperty() == ID){
+                        generateCCB(i, ID);
+                    }
+                }
+                for (int i = 0; i < vecSport.size(); i++) {
+                    if(vecSport[i].getIDUserProperty() == ID){
+                        generateSCB(i, ID);
+                    }
+                }
+                for (int i = 0; i < vecWork.size(); i++) {
+                    if(vecWork[i].getIDUserProperty() == ID){
+                        generateWCB(i, ID);
+                    }
+                }
+            };
+                break;
+            case 2:
+                clear();
+                checkInventory();
+                break;
+            case 3:
+                clear();
+                searchSubscribedUser();
+                break;
+            case 4:
+                clear();
+                seeDiscounts();
+                break;
+            case 0:
+                break;
+            default:
+                cout << "Wrong option, please try again\n";
+                clean();
+        }
+    }while(opc != 0);
+    clean();
 }

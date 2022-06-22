@@ -4,6 +4,7 @@
 #include "Classes/Users_Classes/Provider.h"
 #include "Classes/Users_Classes/Admin.h"
 #include "Classes/Users_Classes/User.h"
+
 using namespace::std;
 
 //definicion de vectores globales
@@ -19,6 +20,15 @@ void CreateSubscribed();
 void CreateAdmin();
 
 //implemetacion de funciones
+void clean(){
+    system( "read -n 1 -s -p \"Press any key to continue...\"" );
+    system("clear");
+}
+
+void clear(){
+    system("clear");
+}
+
 void CreateUser() {
     User obj;
     obj.setName();
@@ -29,6 +39,7 @@ void CreateUser() {
     obj.setUserName();
     obj.setPassword();
     vecUser.push_back(obj);
+    clean();
 }
 
 void CreateProvider(){
@@ -43,6 +54,7 @@ void CreateProvider(){
     obj.setUserName();
     obj.setPassword();
     vecProvider.push_back(obj);
+    clean();
 }
 
 void CreateSubscribed(){
@@ -52,11 +64,11 @@ void CreateSubscribed(){
     obj.setID();
     obj.setPhone();
     obj.setMail();
-    obj.setAccountNumber();
     obj.setCode();
     obj.setUserName();
     obj.setPassword();
     vecSubscribed.push_back(obj);
+    clean();
 }
 
 void CreateAdmin(){
@@ -64,4 +76,5 @@ void CreateAdmin(){
     obj.setUserName();
     obj.setPassword();
     vecAdmin.push_back(obj);
+    clean();
 }

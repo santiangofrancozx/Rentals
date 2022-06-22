@@ -1,0 +1,86 @@
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+div{
+    position: relative;
+}
+
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+}
+
+h1{
+    background: black;
+    font-size: 210px;
+    text-align: center;
+    mix-blend-mode: multiply;
+}
+
+.description{
+    color: gray;
+    font-size: small;
+}
+
+span{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    mix-blend-mode: hard-light;
+}
+
+ul{
+    text-align: left;
+    display: inline-block;
+}
+
+.type1{
+    font-size: 50px;
+    background-color: #a85958;
+}
+
+.type2{
+    font-size: 50px;
+    background-color: #FFDB58;
+}
+
+.type3{
+    font-size: 50px;
+    background-color: #365B36;
+}
+
+.aston{
+    margin-left: 10%;
+    width: 28.5%;
+    height: 10%;
+}
+
+.toyota{
+    margin-left: 10%;
+    width: 30%;
+    height: 10%;
+}
+
+.mazda{
+    margin-left: 10%;
+    width: 30%;
+    height: 10%;
+}
+
+footer{
+    font-size: small;
+    color: gray;
+    background-color: #0E0E0E;
+}
+
+.logo{
+    filter: invert(95%);
+    height: 1.5%;
+    width: 1.5%;
+}

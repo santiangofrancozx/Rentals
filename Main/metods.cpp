@@ -26,7 +26,6 @@ void eraseProviderUser();
 void eraseSubscribedUser();
 
 
-
 //BUSQUEDA/CONSULTA DE USUARIOS
 void searchCommonUser(){
     long search;
@@ -81,7 +80,7 @@ void searchSubscribedUser(){
     bool exist = false;
     Subscribed t3;
 
-    cout << "Input suscribed's ID: ";
+    cout << "Input subscribed's ID: ";
     cin >> search;
     for (int i = 0; i < vecSubscribed.size(); i++){
         t3 = vecSubscribed[i];
@@ -92,7 +91,7 @@ void searchSubscribedUser(){
             cout << t3.getUserName() << endl;
             cout << t3.getPhone() << endl;
             cout << t3.getMail() << endl;
-            cout << t3.getAccountNumber() << ", " << t3.getCode() << endl;
+            cout << t3.getCode() << endl;
         } else if (!exist){
             cout << "The ID has not been found.\n";
             cout << "Make sure that the ID is correct.\n";
@@ -206,3 +205,22 @@ void eraseSubscribedUser(){
     }
 }
 
+//DISCOUNTS FOR SUBSCRIBED
+void seeDiscounts(){
+    string search;
+    bool exist = false;
+
+    cout << "Input username: ";
+    fflush(stdin);
+    getline(cin, search);
+
+    for (int i = 0; i < vecSubscribed.size(); i++){
+        if (vecSubscribed[i].getUserName() == search){
+            exist = true;
+            cout << "Your special user code is: " << vecSubscribed[i].getCode() << endl;
+            cout << "Your discounts for being a subscribed user are:\n";
+            system("open /Users/user1/Desktop/Rentals/subscribedWebPage/subscribedWebPage.html");
+            clean();
+        }
+    }
+}

@@ -21,14 +21,29 @@ void createNewClients(){
         cin>> opc;
 
         switch (opc) {
-            case 1: CreateUser(); break;
-            case 2: CreateProvider(); break;
-            case 3: CreateSubscribed(); break;
-            case 4: CreateAdmin(); break;
+            case 1:
+                clear();
+                CreateUser();
+                break;
+            case 2:
+                clear();
+                CreateProvider();
+                break;
+            case 3:
+                clear();
+                CreateSubscribed();
+                break;
+            case 4:
+                clear();
+                CreateAdmin();
+                break;
             case 0: break;
-            default: cout<<"Incorrect option, please try again.\n";
+            default:
+                cout<<"Incorrect option, please try again.\n";
+                clean();
         }
     }while(opc != 0);
+    clean();
 }
 
 //2. buscar/consultar cliente
@@ -45,14 +60,29 @@ void searchClient(){
         cin>> opc;
 
         switch(opc){
-            case 1: searchCommonUser(); break;
-            case 2: searchProviderUser(); break;
-            case 3: searchSubscribedUser(); break;
-            case 4: searchAdmin(); break;
+            case 1:
+                clear();
+                searchCommonUser();
+                break;
+            case 2:
+                clear();
+                searchProviderUser();
+                break;
+            case 3:
+                clear();
+                searchSubscribedUser();
+                break;
+            case 4:
+                clear();
+                searchAdmin();
+                break;
             case 0:  break;
-            default: cout<<"Incorrect option\n";
+            default:
+                cout<<"Incorrect option\n";
+                clean();
         }
     }while(opc != 0);
+    clean();
 }
 
 //3. borrar usuario
@@ -68,13 +98,25 @@ void eraseClient(){
         cin>> opc;
 
         switch(opc){
-            case 1: eraseCommonUser(); break;
-            case 2: eraseProviderUser(); break;
-            case 3: eraseSubscribedUser(); break;
+            case 1:
+                clear();
+                eraseCommonUser();
+                break;
+            case 2:
+                clear();
+                eraseProviderUser();
+                break;
+            case 3:
+                clear();
+                eraseSubscribedUser();
+                break;
             case 0: break;
-            default: cout << "Incorrect option\n";
+            default:
+                cout << "Incorrect option\n";
+                clean();
         }
     }while(opc != 0);
+    clean();
 }
 
 //MENU EN ADMIN PARA CLIENTES
@@ -91,11 +133,22 @@ void clientsFuntions(){
         cin >> opc;
 
         switch (opc) {
-            case 1: createNewClients(); break;
-            case 2: searchClient(); break;
-            case 3: eraseClient(); break;
+            case 1:
+                clear();
+                createNewClients();
+                break;
+            case 2:
+                clear();
+                searchClient();
+                break;
+            case 3:
+                clear();
+                eraseClient();
+                break;
             case 0: break;
-            default: cout << "Incorrect option\n";
+            default:
+                cout << "Incorrect option\n";
+                clean();
         }
     }while(opc != 0);
     clean();
@@ -114,33 +167,23 @@ void addItem(){
         cin >> opc;
 
         switch(opc){
-            case 1: addComfort(); break;
-            case 2: addSport(); break;
-            case 3: addWork(); break;
+            case 1:
+                clear();
+                addComfort();
+                break;
+            case 2:
+                clear();
+                addSport();
+                break;
+            case 3:
+                clear();
+                addWork();
+                break;
             case 0: break;
-            default: cout << "Incorrect option\n";
+            default:
+                cout << "Incorrect option\n";
+                clean();
         }
     } while(opc != 0);
-}
-
-//MENU EN ADMIN PARA INVENTARIO
-void inventoryFuntions(){
-    int opc;
-    do {
-        cout << "Menu for inventory: \n";
-        cout << "1. Check inventory\n";
-        cout << "2. Add item to inventory\n";
-        cout << "3. Erase item form inventory\n";
-        cout << "0. Exit\n";
-        cout << "-> ";
-        cin >> opc;
-
-        switch (opc){
-            case 1: checkInventory(); break;
-            case 2: addItem(); break;
-            //case 3: eraseItem(); break;
-            case 0: break;
-            default: cout << "Incorrect option\n";
-        }
-    } while(opc != 0);
+    clean();
 }

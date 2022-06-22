@@ -4,7 +4,6 @@
 #include "Classes/Autos_Clasees/Comfort.h"
 #include "Classes/Autos_Clasees/Sport.h"
 #include "Classes/Autos_Clasees/Work.h"
-//#include "Main/Menus.cpp" //si algo quita esta linea, yo la puse porque sino, me daba error
 
 using namespace::std;
 
@@ -13,6 +12,9 @@ vector <Sport> vecSport;
 vector <Comfort> vecComfort;
 vector <Work> vecWork;
 
+/*puede que aqui pida que redeclareis clean y clear, las movi a userCreator2000.cpp
+en caso tal, solo quiten este comentario y ya
+
 void clean(){
     system( "read -n 1 -s -p \"Press any key to continue...\"" );
     system("clear");
@@ -20,7 +22,7 @@ void clean(){
 
 void clear(){
     system("clear");
-}
+}*/
 
 //AGREGAR ITEMS
 void addComfort(){
@@ -66,38 +68,88 @@ void addWork(){
 
 
 void checkInventory(){
-    cout<< "-----------------\n";
-    cout<< "Comfort inventory\n";
-    cout<< "-----------------\n";
-    for (int i = 0; i < vecComfort.size(); ++i) {
-        cout<< vecComfort[i].getBrand()
-            << " " << vecComfort[i].getLicensePlate()
-            << " " << vecComfort[i].getPrice()
-            << " " << vecComfort[i].getIDUserProperty()
-            << " " << vecComfort[i].getState()
-            << endl;
-    }
-    cout<< "---------------\n";
-    cout<< "Sport inventory\n";
-    cout<< "---------------\n";
-    for (int j = 0; j < vecSport.size(); ++j) {
-        cout<< vecSport[j].getBrand()
-            << " " << vecSport[j].getLicensePlate()
-            << " " << vecSport[j].getPrice()
-            << " " << vecSport[j].getIDUserProperty()
-            << " " << vecSport[j].getState()
-            << endl;
-    }
-    cout<< "--------------\n";
-    cout<< "Work inventory\n";
-    cout<< "--------------\n";
-    for (int k = 0; k < vecWork.size(); ++k) {
-        cout<< vecWork[k].getBrand()
-            << " " << vecWork[k].getLicensePlate()
-            << " " << vecWork[k].getPrice()
-            << " " << vecWork[k].getIDUserProperty()
-            << " " << vecWork[k].getState()
-            << endl;
+    int opc;
+    cout << "Do you want to see the inventory in web page? (1. yes, 2. not): ";
+    cin >> opc;
+    switch (opc) {
+        case 1: {
+            ofstream webInventory("inventory.html");
+            webInventory << "<html><head><title>Rental's inventory</title><link rel=\"stylesheet\" "
+                            "href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/inventoryStyle.css\"></head>" << endl;
+            //creo que la ubicacion estaria good, sino pos jeputa
+            webInventory << "<body><div><h1>Inventory<h1></div>" << endl;
+            webInventory << "<div><p>by Rentals</p></div>" << endl;
+            webInventory << "<div><table><tr><th>Brand</th><th>License plate</th><th>Price</th>"
+                            "<th>User ID property</th><th>State</th><th>Type</th></tr>" << endl;
+            for (int i = 0; i < vecComfort.size(); ++i) {
+                webInventory << "<tr><td>"
+                             << vecComfort[i].getBrand() << "</td><td>"
+                             << vecComfort[i].getLicensePlate() << "</td><td>"
+                             << vecComfort[i].getPrice() << "</td><td>"
+                             << vecComfort[i].getIDUserProperty() << "</td><td>"
+                             << vecComfort[i].getState() << "</td>"
+                             "<td>COMFORT</td></tr>" << endl;
+            }
+
+            for (int j = 0; j < vecSport.size(); ++j) {
+                webInventory << "<tr><td>"
+                             << vecSport[j].getBrand() << "</td><td>"
+                             << vecSport[j].getLicensePlate() << "</td><td>"
+                             << vecSport[j].getPrice() << "</td><td>"
+                             << vecSport[j].getIDUserProperty() << "</td><td>"
+                             << vecSport[j].getState() << "</td>"
+                             "<td>SPORT</td></tr>" << endl;
+            }
+
+            for (int k = 0; k < vecWork.size(); ++k) {
+                webInventory << "<tr><td>"
+                             << vecWork[k].getBrand() << "</td><td>"
+                             << vecWork[k].getLicensePlate() << "</td><td>"
+                             << vecWork[k].getPrice() << "</td><td>"
+                             << vecWork[k].getIDUserProperty() << "</td><td>"
+                             << vecWork[k].getState() << "</td>"
+                             "<td>WORK</td></tr>" << endl;
+            }
+            webInventory << "</table></div></body></html>" << endl;
+            //igual, revisa esta ruta
+            system("open /Users/user1/Desktop/Rentals/cmake-build-debug/inventory.html");
+            clean();
+        }
+        case 2:{
+            cout << "-----------------\n";
+            cout << "Comfort inventory\n";
+            cout << "-----------------\n";
+            for (int i = 0; i < vecComfort.size(); ++i) {
+                cout << vecComfort[i].getBrand()
+                     << " " << vecComfort[i].getLicensePlate()
+                     << " " << vecComfort[i].getPrice()
+                     << " " << vecComfort[i].getIDUserProperty()
+                     << " " << vecComfort[i].getState()
+                     << endl;
+            }
+            cout << "---------------\n";
+            cout << "Sport inventory\n";
+            cout << "---------------\n";
+            for (int j = 0; j < vecSport.size(); ++j) {
+                cout << vecSport[j].getBrand()
+                     << " " << vecSport[j].getLicensePlate()
+                     << " " << vecSport[j].getPrice()
+                     << " " << vecSport[j].getIDUserProperty()
+                     << " " << vecSport[j].getState()
+                     << endl;
+            }
+            cout << "--------------\n";
+            cout << "Work inventory\n";
+            cout << "--------------\n";
+            for (int k = 0; k < vecWork.size(); ++k) {
+                cout << vecWork[k].getBrand()
+                     << " " << vecWork[k].getLicensePlate()
+                     << " " << vecWork[k].getPrice()
+                     << " " << vecWork[k].getIDUserProperty()
+                     << " " << vecWork[k].getState()
+                     << endl;
+            }
+        }
     }
     clean();
 }
@@ -134,7 +186,7 @@ void generateCCB(int i){
                         webComfort << "<body><div><h1>COMFORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>"
                                    << endl;
                         webComfort << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
-                        webComfort << "<div><span class=\"ID\">" << vecComfort[i].getIDUserProperty() << "</span></div>" << endl;
+                        webComfort << "<div><span class=\"ID\">User's ID: " << vecComfort[i].getIDUserProperty() << "</span></div>" << endl;
                         webComfort << "<div><p>Details of the rented car: </p>" << endl;
 
                         webComfort << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -187,7 +239,7 @@ void generateCCB(int i){
                         webComfort << "<body><div><h1>COMFORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>"
                                    << endl;
                         webComfort << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
-                        webComfort << "<div><span class=\"ID\">" << vecComfort[i].getIDUserProperty() << "</span></div>" << endl;
+                        webComfort << "<div><span class=\"ID\">User's ID: " << vecComfort[i].getIDUserProperty() << "</span></div>" << endl;
                         webComfort << "<div><p>Details of the rented car: </p>" << endl;
 
                         webComfort << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -240,7 +292,7 @@ void generateSCB(int j){
                         webSport << "<html><head><title>SCB</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
                         webSport << "<body><div><h1>SPORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
                         webSport << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
-                        webSport << "<div><span class=\"ID\">" << vecSport[j].getIDUserProperty() << "</span></div>" << endl;
+                        webSport << "<div><span class=\"ID\">User's ID: " << vecSport[j].getIDUserProperty() << "</span></div>" << endl;
                         webSport << "<div><p>Details of the rented car: </p>" <<endl;
 
                         webSport << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -287,7 +339,7 @@ void generateSCB(int j){
                         webSport << "<html><head><title>SCB</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
                         webSport << "<body><div><h1>SPORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
                         webSport << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
-                        webSport << "<div><span class=\"ID\">" << vecSport[i].getIDUserProperty() << "</span></div>" << endl;
+                        webSport << "<div><span class=\"ID\">User's ID: " << vecSport[i].getIDUserProperty() << "</span></div>" << endl;
                         webSport << "<div><p>Details of the rented car: </p>" <<endl;
 
                         webSport << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -337,7 +389,7 @@ void generateWCB(int k){
                         webWork << "<html><head><title>WCB</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
                         webWork << "<body><div><h1>WORK CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
                         webWork << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
-                        webWork << "<div><span class=\"ID\">" << vecWork[k].getIDUserProperty() << "</span></div>" << endl;
+                        webWork << "<div><span class=\"ID\">User's ID: " << vecWork[k].getIDUserProperty() << "</span></div>" << endl;
                         webWork << "<div><p>Details of the rented car: </p>" <<endl;
 
                         webWork << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -384,7 +436,7 @@ void generateWCB(int k){
                         webWork << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
                         webWork << "<body><div><h1>WORK CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
                         webWork << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
-                        webWork << "<div><span class=\"ID\">" << vecWork[i].getIDUserProperty() << "</span></div>" << endl;
+                        webWork << "<div><span class=\"ID\">User's ID: " << vecWork[i].getIDUserProperty() << "</span></div>" << endl;
                         webWork << "<div><p>Details of the rented car: </p>" <<endl;
 
                         webWork << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -565,6 +617,7 @@ void rentCar(){
     }while(opc != 0);
 }
 
+
 void generateCCB(int i, string ID){
     if(vecComfort[i].getIDUserProperty() == ID)
         vecComfort[i];
@@ -574,7 +627,7 @@ void generateCCB(int i, string ID){
     webComfort << "<body><div><h1>COMFORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>"
                << endl;
     webComfort << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
-    webComfort << "<div><span class=\"ID\">" << vecComfort[i].getIDUserProperty() << "</span></div>" << endl;
+    webComfort << "<div><span class=\"ID\">User's ID: " << vecComfort[i].getIDUserProperty() << "</span></div>" << endl;
     webComfort << "<div><p>Details of the rented car: </p>" << endl;
 
     webComfort << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -588,6 +641,7 @@ void generateCCB(int i, string ID){
     system("open /Users/user1/Desktop/Rentals/cmake-build-debug/CCB.html");
     clean();
 }
+
 void generateWCB(int k, string ID){
     if(vecComfort[k].getIDUserProperty() == ID)
         vecComfort[k];
@@ -595,7 +649,7 @@ void generateWCB(int k, string ID){
     webWork << "<html><head><title>WCB</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
     webWork << "<body><div><h1>WORK CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
     webWork << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
-    webWork << "<div><span class=\"ID\">" << vecWork[k].getIDUserProperty() << "</span></div>" << endl;
+    webWork << "<div><span class=\"ID\">User's ID: " << vecWork[k].getIDUserProperty() << "</span></div>" << endl;
     webWork << "<div><p>Details of the rented car: </p>" <<endl;
 
     webWork << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -614,6 +668,7 @@ void generateSCB(int j, string ID){
     webSport << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
     webSport << "<body><div><h1>SPORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
     webSport << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+    webSport << "<div><span class=\"ID\">User's ID: " << vecWork[j].getIDUserProperty() << "</span></div>" << endl;
     webSport << "<div><p>Details of the rented car: </p>" <<endl;
 
     webSport << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
@@ -624,6 +679,7 @@ void generateSCB(int j, string ID){
     system("open /Users/user1/Desktop/Rentals/cmake-build-debug/SCB.html");
     clean();
 }
+
 
 void rentedItems(){
     cout<< "-----------------\n";
@@ -676,6 +732,7 @@ void rentedItems(){
     }
     clean();
 }
+
 
 void searchCar(){
     string plate;
@@ -739,6 +796,7 @@ void searchCar(){
     } while (opcBill != 0);
     clean();
 }
+
 
 void eraseComfortCar(){
     string search;
@@ -829,6 +887,7 @@ void eraseWorkCar(){
     }
     clean();
 }
+
 
 void eraseCar(){
     int opc;

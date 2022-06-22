@@ -9,15 +9,13 @@ using namespace::std;
 
 class Subscribed: public User{
 private:
-    long AccountNumber, code;
+    long code;
 public:
     Subscribed();
     virtual ~Subscribed();
     //stters
-    void setAccountNumber();
     void setCode();
     //getters
-    long getAccountNumber();
     long getCode();
 };
 //chichona
