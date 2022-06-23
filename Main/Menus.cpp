@@ -25,8 +25,8 @@ void menuSubscribed();
 void firstRun(){
     Admin objAdmin;
     string verify;
-    cout<<"Welcome to the rentals, our program, "
-        << " later u can learn more about the developer who create this program.\n";
+    cout<<"Welcome to the rentals, our program,"
+        << " later u can learn more about the developers who create this program.\n";
     cout<<"Now i need u create the information about the administrator.\n";
     objAdmin.setUserName();
     objAdmin.setPassword();
