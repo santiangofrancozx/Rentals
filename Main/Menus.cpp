@@ -345,17 +345,17 @@ void menuCommonUser(){
                 cin >> ID;
                 for (int i = 0; i < vecComfort.size(); i++) {
                     if(vecComfort[i].getIDUserProperty() == ID){
-                        generateCCB(i, ID);
+                        generateCCB2(i);
                     }
                 }
                 for (int i = 0; i < vecSport.size(); i++) {
                     if(vecSport[i].getIDUserProperty() == ID){
-                        generateSCB(i, ID);
+                        generateSCB2(i);
                     }
                 }
                 for (int i = 0; i < vecWork.size(); i++) {
                     if(vecWork[i].getIDUserProperty() == ID){
-                        generateWCB(i, ID);
+                        generateWCB2(i);
                     }
                 }
             };
@@ -417,19 +417,19 @@ void menuSubscribed(){
                 string ID;
                 cout << "Input ur ID: ";
                 cin >> ID;
-                for (int i = 0; i < vecComfort.size(); i++) {
-                    if(vecComfort[i].getIDUserProperty() == ID){
-                        generateCCB(i, ID);
+                for (int x = 0; x < vecComfort.size(); x++) {
+                    if(vecComfort[x].getIDUserProperty() == ID){
+                        generateCCB2(x);
                     }
                 }
                 for (int i = 0; i < vecSport.size(); i++) {
                     if(vecSport[i].getIDUserProperty() == ID){
-                        generateSCB(i, ID);
+                        generateSCB2(i);
                     }
                 }
                 for (int i = 0; i < vecWork.size(); i++) {
                     if(vecWork[i].getIDUserProperty() == ID){
-                        generateWCB(i, ID);
+                        generateWCB2(i);
                     }
                 }
             };

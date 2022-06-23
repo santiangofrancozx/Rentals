@@ -11,18 +11,12 @@ using namespace::std;
 vector <Sport> vecSport;
 vector <Comfort> vecComfort;
 vector <Work> vecWork;
-
-/*puede que aqui pida que redeclareis clean y clear, las movi a userCreator2000.cpp
-en caso tal, solo quiten este comentario y ya
-
-void clean(){
-    system( "read -n 1 -s -p \"Press any key to continue...\"" );
-    system("clear");
-}
-
-void clear(){
-    system("clear");
-}*/
+void generateCCB(int i);
+void generateSCB(int j);
+void generateWCB(int k);
+void generateCCB2(int i);
+void generateSCB2(int j);
+void generateWCB2(int k);
 
 //AGREGAR ITEMS
 void addComfort(){
@@ -159,7 +153,7 @@ void generateCCB(int i){
     vecComfort[i];
     int opc;
     do {
-        cout << "Registered user? (1. yes, 2. not): ";
+        cout << "Registered user? (1. yes, 2. not, 0. Exit): ";
         cin >> opc;
         switch (opc) {
             case 1: {
@@ -199,14 +193,16 @@ void generateCCB(int i){
                         webComfort << "</body></html>" << endl;
                         system("open /Users/user1/Desktop/Rentals/cmake-build-debug/CCB.html");
                         clean();
+                        break;
                     } else if (!exist) {
                         cout << "The ID has not been found.\n";
                         cout << "Make sure that the ID is correct.\n";
-                        break;
                         clean();
+                        break;
                     }
                 }
             }
+                break;
             case 2: {
                 cout << "Register the user\n";
                 CreateUser();
@@ -251,6 +247,8 @@ void generateCCB(int i){
                                    << "</td></tr></div>" << endl;
                         webComfort << "</body></html>" << endl;
                         system("open /Users/user1/Desktop/Rentals/cmake-build-debug/CCB.html");
+                        clean();
+                        break;
                     } else if (!exist) {
                         cout << "The ID has not been found.\n";
                         cout << "Make sure that the ID is correct.\n";
@@ -259,15 +257,17 @@ void generateCCB(int i){
                     }
                 }
             }
+            break;
         }
     }while(opc != 0);
+    clean();
 }
 
 void generateSCB(int j){
     vecSport[j];
     int opc;
     do {
-        cout << "Registered user? (1. yes, 2. not): ";
+        cout << "Registered user? (1. yes, 2. not, 0. Exit): ";
         cin >> opc;
         switch (opc) {
             case 1: {
@@ -302,14 +302,16 @@ void generateSCB(int j){
                         webSport << "</body></html>" << endl;
                         system("open /Users/user1/Desktop/Rentals/cmake-build-debug/SCB.html");
                         clean();
+                        break;
                     } else if (!exist) {
                         cout << "The ID has not been found.\n";
                         cout << "Make sure that the ID is correct.\n";
-                        break;
                         clean();
+                        break;
                     }
                 }
             }
+                break;
             case 2: {
                 cout << "Register the user\n";
                 CreateUser();
@@ -348,6 +350,8 @@ void generateSCB(int j){
                         webSport << "<tr><td>Total Price </td><td class=\"data3\">" << vecSport[j].getPrice() << "</td></tr></div>" << endl;
                         webSport << "</body></html>" << endl;
                         system("open /Users/user1/Desktop/Rentals/cmake-build-debug/SCB.html");
+                        clean();
+                        break;
                     } else if (!exist) {
                         cout << "The ID has not been found.\n";
                         cout << "Make sure that the ID is correct.\n";
@@ -356,6 +360,7 @@ void generateSCB(int j){
                     }
                 }
             }
+                break;
         }
     }while(opc != 0);
 }
@@ -364,7 +369,7 @@ void generateWCB(int k){
     vecWork[k];
     int opc;
     do {
-        cout << "Registered user? (1. yes, 2. not): ";
+        cout << "Registered user? (1. yes, 2. not, 0. Exit): ";
         cin >> opc;
         switch (opc) {
             case 1: {
@@ -399,14 +404,16 @@ void generateWCB(int k){
                         webWork << "</body></html>" << endl;
                         system("open /Users/user1/Desktop/Rentals/cmake-build-debug/WCB.html");
                         clean();
+                        break;
                     } else if (!exist) {
                         cout << "The ID has not been found.\n";
                         cout << "Make sure that the ID is correct.\n";
-                        break;
                         clean();
+                        break;
                     }
                 }
             }
+                break;
             case 2:{
                 cout << "Register the user\n";
                 CreateUser();
@@ -445,6 +452,9 @@ void generateWCB(int k){
                         webWork << "<tr><td>Total Price </td><td class=\"data3\">" << vecWork[k].getPrice() << "</td></tr></div>" << endl;
                         webWork << "</body></html>" << endl;
                         system("open /Users/user1/Desktop/Rentals/cmake-build-debug/WCB.html");
+                        //opc = 0;
+                        clean();
+                        break;
                     } else if (!exist) {
                         cout << "The ID has not been found.\n";
                         cout << "Make sure that the ID is correct.\n";
@@ -453,8 +463,16 @@ void generateWCB(int k){
                     }
                 }
             }
+                break;
+            case 0:
+                break;
+            default:
+                cout << "Wrong option, please try again\n";
+                break;
         }
+
     }while(opc != 0);
+    clean();
 }
 
 void rentCar(){
@@ -615,13 +633,12 @@ void rentCar(){
                 break;
         }
     }while(opc != 0);
+    clean();
 }
 
 
-void generateCCB(int i, string ID){
-    if(vecComfort[i].getIDUserProperty() == ID)
-        vecComfort[i];
-    ofstream webComfort("CCB.html");
+void generateCCB2(int i){
+    /*ofstream webComfort("CCB.html");
     webComfort << "<html><head><title>CCB</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>"
                << endl;
     webComfort << "<body><div><h1>COMFORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>"
@@ -637,15 +654,30 @@ void generateCCB(int i, string ID){
                << vecComfort[i].getLicensePlate() << "</td></tr>" << endl;
     webComfort << "<tr><td>Total Price </td><td class=\"data3\">" << vecComfort[i].getPrice()
                << "</td></tr></div>" << endl;
-    webComfort << "</body></html>" << endl;
+    webComfort << "</body></html>" << endl;*/
     system("open /Users/user1/Desktop/Rentals/cmake-build-debug/CCB.html");
     clean();
 }
 
-void generateWCB(int k, string ID){
-    if(vecComfort[k].getIDUserProperty() == ID)
-        vecComfort[k];
-    ofstream webWork("WCB.html");
+void generateWCB2(int j){
+    /*ofstream webSport("SCB.html");
+    webSport << "<html><head><title>SCB</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
+    webSport << "<body><div><h1>SPORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
+    webSport << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
+    webSport << "<div><span class=\"ID\">User's ID: " << vecSport[j].getIDUserProperty() << "</span></div>" << endl;
+    webSport << "<div><p>Details of the rented car: </p>" <<endl;
+
+    webSport << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
+    webSport << "<tr><td>Car's Brand </td><td class=\"data1\">" << vecSport[j].getBrand() << "</td></tr>" << endl;
+    webSport << "<tr><td>Car's License Plate </td><td class=\"data2\">" << vecSport[j].getLicensePlate() << "</td></tr>" << endl;
+    webSport << "<tr><td>Total Price </td><td class=\"data3\">" << vecSport[j].getPrice() << "</td></tr></div>" << endl;
+    webSport << "</body></html>" << endl;*/
+    system("open /Users/user1/Desktop/Rentals/cmake-build-debug/WCB.html");
+    clean();
+}
+
+void generateSCB2(int k){
+    /*ofstream webWork("WCB.html");
     webWork << "<html><head><title>WCB</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
     webWork << "<body><div><h1>WORK CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
     webWork << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
@@ -656,26 +688,7 @@ void generateWCB(int k, string ID){
     webWork << "<tr><td>Car's Brand </td><td class=\"data1\">" << vecWork[k].getBrand() << "</td></tr>" << endl;
     webWork << "<tr><td>Car's License Plate </td><td class=\"data2\">" << vecWork[k].getLicensePlate() << "</td></tr>" << endl;
     webWork << "<tr><td>Total Price </td><td class=\"data3\">" << vecWork[k].getPrice() << "</td></tr></div>" << endl;
-    webWork << "</body></html>" << endl;
-    system("open /Users/user1/Desktop/Rentals/cmake-build-debug/WCB.html");
-    clean();
-}
-
-void generateSCB(int j, string ID){
-    if(vecComfort[j].getIDUserProperty() == ID)
-        vecComfort[j];
-    ofstream webSport("SCB.html");
-    webSport << "<html><head><title>CCD</title><link rel=\"stylesheet\" href=\"/Users/user1/Desktop/Rentals/cmake-build-debug/billStyle.css\"></head>" << endl;
-    webSport << "<body><div><h1>SPORT CAR BILL</h1><span class=\"by\">by Rentals</span></div>" << endl;
-    webSport << "<div><span class=\"valid\">This bill is valid until 15 days<span></div>" << endl;
-    webSport << "<div><span class=\"ID\">User's ID: " << vecWork[j].getIDUserProperty() << "</span></div>" << endl;
-    webSport << "<div><p>Details of the rented car: </p>" <<endl;
-
-    webSport << "<div><table><tr><th>FACTS</th><th>DATA</th></tr>" << endl;
-    webSport << "<tr><td>Car's Brand </td><td class=\"data1\">" << vecSport[j].getBrand() << "</td></tr>" << endl;
-    webSport << "<tr><td>Car's License Plate </td><td class=\"data2\">" << vecSport[j].getLicensePlate() << "</td></tr>" << endl;
-    webSport << "<tr><td>Total Price </td><td class=\"data3\">" << vecSport[j].getPrice() << "</td></tr></div>" << endl;
-    webSport << "</body></html>" << endl;
+    webWork << "</body></html>" << endl;*/
     system("open /Users/user1/Desktop/Rentals/cmake-build-debug/SCB.html");
     clean();
 }
@@ -736,34 +749,77 @@ void rentedItems(){
 
 void searchCar(){
     string plate;
-    int opcBill;
-    do {
-        cout << "Input the plate: ";
+        cout << "Input the license plate: ";
         cin >> plate;
-        for (int i = 0; i < vecComfort.size(); ++i) {
-            if (plate == vecComfort[i].getLicensePlate()) {
+        for (int x = 0; x < vecComfort.size(); ++x) {
+            if (plate == vecComfort[x].getLicensePlate()) {
                 cout << "This is what i found: \n";
                 cout << "-----------------------\n";
-                cout << "Licence plat: " << vecComfort[i].getLicensePlate() << endl;
-                cout << "Brand: " << vecComfort[i].getBrand() << endl;
-                cout << "Price: " << vecComfort[i].getPrice() << endl;
-                cout << "State: " << vecComfort[i].getState() << endl;
-                cout << "Actual Property: " << vecComfort[i].getIDUserProperty() << endl;
-                if (vecComfort[i].getIDUserProperty() != "Dont have ID user property") {
-                    cout << "To generate the bill for this car press 1 to go back press 0: ";
-                    cin >> opcBill;
-                    switch (opcBill) {
-                        case 1:
-                            generateCCB(i, vecComfort[i].getIDUserProperty());
-                            break;
-                        case 0:
-                            break;
-                        default:
-                            cout << "Wrong option, please try again\n";
-                            clean();
-                            break;
-                    }
+                cout << "Licence plat: " << vecComfort[x].getLicensePlate() << endl;
+                cout << "Brand: " << vecComfort[x].getBrand() << endl;
+                cout << "Price: " << vecComfort[x].getPrice() << endl;
+                cout << "State: " << vecComfort[x].getState() << endl;
+                cout << "Actual Property: " << vecComfort[x].getIDUserProperty() << endl;
+                if (vecComfort[x].getIDUserProperty() != "Dont have ID user property") {
+                    int opcBillGenerate;
+                    do {
+                        cout << "To generate the bill for this car press 1 to go back press 0: ";
+                        cin >> opcBillGenerate;
+                        switch (opcBillGenerate) {
+                            case 1:
+                                generateCCB2(x);
+                                clean();
+                                break;
+                            case 0:
+                                clean();
+                                break;
+                            default:
+                                cout << "Wrong option, please try again\n";
+                                clean();
+                                break;
+                        }
+                    }while(opcBillGenerate != 0);
                 }
+                break;
+            } else {
+                cout << "I did not find any car in Comfort class\n";
+                break;
+            }
+        }
+
+        for (int i = 0; i < vecSport.size(); ++i) {
+            if (plate == vecSport[i].getLicensePlate()) {
+                cout << "This is what i found: \n";
+                cout << "-----------------------\n";
+                cout << "Licence plat: " << vecSport[i].getLicensePlate() << endl;
+                cout << "Brand: " << vecSport[i].getBrand() << endl;
+                cout << "Price: " << vecSport[i].getPrice() << endl;
+                cout << "State: " << vecSport[i].getState() << endl;
+                cout << "Actual Property: " << vecSport[i].getIDUserProperty() << endl;
+                if (vecSport[i].getIDUserProperty() != "Dont have ID user property") {
+                    int opcBillGenerate;
+                    do {
+                        cout << "To generate the bill for this car press 1 to go back press 0: ";
+                        cin >> opcBillGenerate;
+                        switch (opcBillGenerate) {
+                            case 1:
+                                generateSCB2(i);
+                                clean();
+                                break;
+                            case 0:
+                                clean();
+                                break;
+                            default:
+                                cout << "Wrong option, please try again\n";
+                                clean();
+                                break;
+                        }
+                    }while(opcBillGenerate != 0);
+                }
+                break;
+            } else {
+                cout << "I did not find any car in Sport class\n";
+                break;
             }
         }
 
@@ -777,23 +833,31 @@ void searchCar(){
                 cout << "State: " << vecWork[i].getState() << endl;
                 cout << "Actual Property: " << vecWork[i].getIDUserProperty() << endl;
                 if (vecWork[i].getIDUserProperty() != "Dont have ID user property") {
-                    cout << "To generate the bill for this car press 1 to go back press 0: ";
-                    cin >> opcBill;
-                    switch (opcBill) {
-                        case 1:
-                            generateWCB(i, vecWork[i].getIDUserProperty());
-                            break;
-                        case 0:
-                            break;
-                        default:
-                            cout << "Wrong option, please try again\n";
-                            clean();
-                            break;
-                    }
+                    int opcBillGenerate;
+                    do {
+                        cout << "To generate the bill for this car press 1 to go back press 0: ";
+                        cin >> opcBillGenerate;
+                        switch (opcBillGenerate) {
+                            case 1:
+                                generateWCB2(i);
+                                clean();
+                                break;
+                            case 0:
+                                clean();
+                                break;
+                            default:
+                                cout << "Wrong option, please try again\n";
+                                clean();
+                                break;
+                        }
+                    }while (opcBillGenerate != 0);
                 }
+                break;
+            } else {
+                cout << "I did not find any car in Comfort class\n";
+                break;
             }
         }
-    } while (opcBill != 0);
     clean();
 }
 
@@ -918,4 +982,7 @@ void eraseCar(){
                 break;
         }
     } while (opc != 0);
+    clean();
 }
+
+

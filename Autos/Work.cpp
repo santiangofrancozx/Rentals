@@ -15,13 +15,14 @@ Work::~Work() {
     //DTOR
 }
 
+
 void Work::setCantTons(){
     cout<<"Input number of tons: ";
     cin>>cantTons;
 }
 
 void Work::setTrailer(){
-    cout<<"Has it trailer: ";
+    cout<<"Has it trailer(1. yes, 2. no): ";
     cin>>trailer;
 }
 

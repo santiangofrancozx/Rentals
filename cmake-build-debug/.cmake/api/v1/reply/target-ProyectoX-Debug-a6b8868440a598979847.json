@@ -2,10 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "ProyectoX.exe"
-		},
-		{
-			"path" : "ProyectoX.pdb"
+			"path" : "ProyectoX"
 		}
 	],
 	"backtrace" : 1,
@@ -45,7 +42,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2"
 				},
 				{
 					"fragment" : "-std=gnu++14"
@@ -55,7 +52,7 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/0612v/Documents/proyect/Rentals/."
+					"path" : "/Users/user1/Desktop/Rentals/."
 				}
 			],
 			"language" : "CXX",
@@ -92,16 +89,12 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
-				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
 	"name" : "ProyectoX",
-	"nameOnDisk" : "ProyectoX.exe",
+	"nameOnDisk" : "ProyectoX",
 	"paths" : 
 	{
 		"build" : ".",

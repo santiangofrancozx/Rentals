@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.22"
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ProyectoX::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ProyectoX-Debug-9ad631c3ff6b9c7f5c39.json",
+					"jsonFile" : "target-ProyectoX-Debug-a6b8868440a598979847.json",
 					"name" : "ProyectoX",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/0612v/Documents/proyect/Rentals/cmake-build-debug",
-		"source" : "C:/Users/0612v/Documents/proyect/Rentals"
+		"build" : "/Users/user1/Desktop/Rentals/cmake-build-debug",
+		"source" : "/Users/user1/Desktop/Rentals"
 	},
 	"version" : 
 	{
