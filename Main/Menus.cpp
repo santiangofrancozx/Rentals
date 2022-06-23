@@ -103,7 +103,7 @@ void login(){
                     usr = vecUser[x];
                     if (username == usr.getUserName()) {
                         if (password == usr.getPassword()) {
-                            clear();
+                            clean();
                             menuCommonUser();
                             opc = 0;
                             break;
@@ -403,7 +403,7 @@ void menuSubscribed(){
         cout << "--------------------\n";
         cout << "Subscribed user menu: \n";
         cout << "--------------------\n";
-        cout << "1. See my bills\b";
+        cout << "1. See my bills\n";
         cout << "2. See inventory for availability\n";
         cout << "3. See my personal data\n";
         cout << "4. See my discounts\n";
